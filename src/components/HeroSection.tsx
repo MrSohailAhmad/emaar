@@ -4,15 +4,15 @@ import { images } from "../../public/images";
 
 const HeroSection = () => {
   return (
-    <div className="mx-auto flex h-[70vh] gap-10 items-center justify-center max-w-screen-xl m-4 my-16">
-      <div className="w-[50%] h-full">
+    <div className="mx-auto w-full flex h-auto lg:h-[80vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 my-16">
+      <div className="w-full lg:w-[50%] h-full">
         <Image
           className="w-full h-full"
           src={images.HEROIMG}
           alt="hero sec image"
         />
       </div>
-      <div className="w-[50%] h-full flex items-start gap-5 flex-col">
+      <div className="w-[90%] md:w-[80%] lg:w-[50%] h-[80vh] lg:h-full  flex items-start gap-5 flex-col">
         <div className="flex flex-col gap-3">
           <span className="w-full text-4xl  font-bold">
             Family-Oriented 3 & 4BR Villas{" "}
@@ -31,7 +31,7 @@ const HeroSection = () => {
             with the environment.
           </p>
         </div>
-        <div className="flex w-full items-center justify-between ">
+        <div className="flex w-full gap-5 md:gap-0 flex-wrap justify-center items-center md:justify-between ">
           <div className="flex items-center justify-center gap-5">
             <span>{images.Wallet("w-10 fill-[#308a7b] h-10")}</span>
             <div className="flex flex-col">
@@ -60,7 +60,7 @@ const HeroSection = () => {
           </div>
         </div>
         {/* form & image */}
-        <div className="w-full align-bottom mt-auto flex items-center justify-center ">
+        <div className="w-full mt-20 align-bottom md:mt-auto flex items-center justify-center ">
           <div className="w-[80%] flex items-center justify-center gap-2 flex-col bg-black/90 rounded-lg relative pb-5">
             <span className="absolute -top-24 ">{images.Book}</span>
             <span className="mt-10 text-white">
