@@ -1,4 +1,5 @@
 import React from "react";
+import { images } from "../../public/images";
 
 const RequestAvail = () => {
   return (
@@ -8,16 +9,10 @@ const RequestAvail = () => {
       </h2>
       <div className="flex items-center justify-center gap-10">
         {/* Left Section: Image */}
-        <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
-          <img
-            className="w-full h-auto object-cover rounded-lg shadow-md"
-            src="/path-to-your-image.jpg"
-            alt="Avena The Valley Villas by EMAAR Dubai"
-          />
-        </div>
+        <div className="w-[50%] h-full">{images.Outdoor}</div>
 
         {/* Right Section: Text */}
-        <div className="w-full lg:w-1/2">
+        <div className="w-[50%] ">
           <p className="text-sm md:text-md lg:text-lg text-black mb-6 text-center lg:text-left">
             A quaint new town where life finds its inspiration amidst the vast
             shimmering sands and lush green open spaces. Welcome to The Valley
