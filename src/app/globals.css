@@ -7,3 +7,15 @@
     -webkit-box-shadow: -19px -53px 0px -19px #56abe4;
     -moz-box-shadow: -19px -53px 0px -19px #56abe4;
 }
+
+.PhoneInputInput{
+    border: none;
+    outline: none;
+    background: none;
+    
+}
+
+.PhoneInput{
+    background-color: #fff;
+    border-radius: 5px;
+}
