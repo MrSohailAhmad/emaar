@@ -33,3 +33,13 @@ export default async function handler(req: any, res: any) {
 // const getSanityData = async () => {
 //   return await client.fetch(`*[_type=="person"]`);
 // };
+
+export  async function handlerLocation(req, res) {
+  try {
+    const response = await fetch("https://ipapi.co/json/");
+    const data = await response.json();
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching location data" });
+  }
+}

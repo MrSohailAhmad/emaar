@@ -15,15 +15,16 @@ const OurExpertForm = () => {
 
   const handlesubmit = async () => {
     try {
-      console.log("form data", state);
-      await fetch("../app/api/expertopenion", {
+     let response = await fetch("../app/api/expertopenion", {
         method: "POST",
         body: JSON.stringify(state),
         cache: "no-store",
       });
+    console.log("response==>",response);
     } catch (err) {
       console.log("🚀 ~ onSubmit ~ err:", err);
     }
+    
   };
 
   return (

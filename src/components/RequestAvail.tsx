@@ -96,7 +96,7 @@ const RequestAvail = () => {
       <CustomModal
         isOpen={isModalOpen}
         onClose={closeModal}
-        title="Request Available Units and Prices"
+        title="One-click to download Available Units and Price brochure"
         onSubmit={handleDownloadBrochure}
       />
     </div>
