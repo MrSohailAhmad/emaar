@@ -19,3 +19,18 @@
     background-color: #fff;
     border-radius: 5px;
 }
+
+/* styles/globals.css or styles/YourComponent.module.css */
+@keyframes moveUpAndDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); /* Adjust the value for how high you want it to move up */
+    }
+  }
+  
+  .animate-up-down {
+    animation: moveUpAndDown 2s ease-in-out infinite; /* Change 2s to control the duration */
+  }
+  
