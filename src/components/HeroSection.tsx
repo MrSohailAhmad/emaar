@@ -1,8 +1,29 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { images } from "../../public/images";
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
+import axios, { AxiosResponse } from "axios";
 
 const HeroSection = () => {
+  const [value, setValue] = useState();
+
+  const handleSubmit = async () => {
+    try {
+      console.log("form data", value);
+      await fetch("../app/api/downloadburecher", {
+        method: "POST",
+        body: JSON.stringify(value),
+        cache: "no-store",
+      });
+    } catch (err) {
+      console.log("🚀 ~ onSubmit ~ err:", err);
+    }
+  };
+
+  console.log("value", value);
+
   return (
     <div className="mx-auto w-full flex h-auto lg:h-[70vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 my-16">
       <div className="w-[90%] lg:w-[50%] h-full">
@@ -66,8 +87,18 @@ const HeroSection = () => {
             <span className="mt-10 text-white">
               One-click to download Price List and PDF brochure
             </span>
-            <input type="text" className="w-[60%] h-[2.5rem] rounded-md" />
-            <button className="w-[60%] bg-red-500 text-white px-2 py-3 rounded-md">
+            <PhoneInput
+              defaultCountry="AE"
+              international
+              placeholder="Enter phone number"
+              className="p-3 !text-black  border-none !outline-none"
+              value={value}
+              onChange={(e: any) => setValue(e)}
+            />
+            <button
+              onClick={handleSubmit}
+              className="w-[63%] bg-red-500 text-white px-2 py-3 rounded-md"
+            >
               Download a broucher
             </button>
             <span className="text-white">*Time to download - 2 seconds</span>
