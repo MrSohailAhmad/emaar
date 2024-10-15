@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+.imgshadow {
+    box-shadow: -19px -53px 0px -19px #56abe4;
+    -webkit-box-shadow: -19px -53px 0px -19px #56abe4;
+    -moz-box-shadow: -19px -53px 0px -19px #56abe4;
+}

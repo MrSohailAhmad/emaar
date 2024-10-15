@@ -9,7 +9,7 @@ const RequestAvail = () => {
       </h2>
       <div className="flex items-center justify-center gap-10">
         {/* Left Section: Image */}
-        <div className="w-[50%] h-full">{images.Outdoor}</div>
+        <div className="w-[50%] h-full imgshadow">{images.Outdoor}</div>
 
         {/* Right Section: Text */}
         <div className="w-[50%] ">
@@ -27,7 +27,9 @@ const RequestAvail = () => {
             presents new opportunities for exploration and growth. Come, embark
             on a journey of endless possibilities at The Valley by Emaar.
           </p>
-          <button className="bg-[#ea1214] text-white px-10 py-3 w-full lg:w-auto">
+
+          <button className="bg-red-600 text-white w-[50%] px-6 py-3  lg:w-auto">
+
             Request Available Units & Prices
           </button>
         </div>
