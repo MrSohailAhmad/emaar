@@ -33,7 +33,6 @@ const DescriptiveBrochure = () => {
                 placeholder="Your name"
               />
             </div>
-
             <div>
               <label className="block text-sm font-medium text-gray-400">
                 Your E-mail
