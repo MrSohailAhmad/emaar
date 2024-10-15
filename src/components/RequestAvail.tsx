@@ -1,19 +1,45 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { images } from "../../public/images";
+import CustomModal from "./CustomModal";
 
 const RequestAvail = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
+  const handlePhoneNumberChange = (e) => {
+    setPhoneNumber(e.target.value);
+  };
+
+  const handleDownloadBrochure = () => {
+    // Logic for downloading the PDF brochure
+    console.log("Download brochure for:", phoneNumber);
+    closeModal();
+  };
   return (
-    <div className="flex flex-col items-center justify-center lg:gap-10 my-10 p-4 max-w-screen-xl mx-auto">
-      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-6 text-center lg:text-left">
-        Avena The Valley Villas by EMAAR Dubai
-      </h2>
+    <div className="flex flex-col items-center lg:gap-10 my-10 pt-6 p-4 max-w-screen-xl mx-auto shadow-lg mt-20">
+      <div className="flex flex-col lg:flex-row items-center justify-center mb-6 w-full">
+        {/* Left Spacer */}
+        <div className="lg:mr-12 w-full lg:w-[10%]"></div> {/* Increased margin on the left */}
+
+        <h2 className="text-1xl md:text-xl lg:text-3xl font-bold text-black mb-6 text-center lg:text-left">
+          Avena The Valley Villas by EMAAR Dubai
+        </h2>
+
+        {/* Black Divider */}
+        <div className="bg-black h-[6px] lg:w-[15%] w-full lg:ml-6"></div> {/* Increased width and margin on the right */}
+      </div>
       <div className="flex items-center justify-center gap-10">
         {/* Left Section: Image */}
-        <div className="w-[50%] h-full imgshadow">{images.Outdoor}</div>
+        <div className="w-[47%] h-full imgshadow">{images.Outdoor}</div>
 
         {/* Right Section: Text */}
-        <div className="w-[50%] ">
-          <p className="text-sm md:text-md lg:text-lg text-black mb-6 text-center lg:text-left">
+        <div className="w-[45%] ">
+          <p className="text-sm md:text-md lg:text-lg text-black mb-6 lg:text-left">
             A quaint new town where life finds its inspiration amidst the vast
             shimmering sands and lush green open spaces. Welcome to The Valley
             by Emaar Properties — the perfect place for you to empower your
@@ -28,12 +54,51 @@ const RequestAvail = () => {
             on a journey of endless possibilities at The Valley by Emaar.
           </p>
 
-          <button className="bg-red-600 text-white w-[50%] px-6 py-3  lg:w-auto">
+          <button className="bg-red-600 text-white w-[50%] px-6 py-3  lg:w-auto"
+            onClick={openModal}
+          >
 
             Request Available Units & Prices
           </button>
         </div>
       </div>
+      <div className="max-w-screen-xl mx-auto p-4 my-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20">
+          {/* Card 1 */}
+          <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-[150px] w-[200px]">
+            <span className="mb-4">{images.Tree("w-16 fill-[#6ba4c6] h-12")}</span>
+            <h3 className="text-xl font-bold text-[#6ba4c6]">Green</h3>
+            <p className="text-md text-gray-600">Community</p>
+          </div>
+
+          {/* Card 2 */}
+          <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-[150px] w-[200px]">
+            <span className="mb-4">{images.CCTV("w-16 fill-[#6ba4c6] h-12")}</span>
+            <h3 className="text-xl font-bold text-[#6ba4c6]">24/7</h3>
+            <p className="text-md text-gray-600">CCTV</p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-[150px] w-[200px]">
+            <span className="mb-4">{images.OutDoor("w-16 fill-[#6ba4c6] h-12")}</span>
+            <h3 className="text-xl font-bold text-[#6ba4c6]">Outdoor</h3>
+            <p className="text-md text-gray-600">Pool</p>
+          </div>
+
+          {/* Card 4 */}
+          <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-[150px] w-[200px]">
+            <span className="mb-4">{images.Teddy("w-16 fill-[#6ba4c6] h-12")}</span>
+            <h3 className="text-xl font-bold text-[#6ba4c6]">Kids</h3>
+            <p className="text-md text-gray-600">Play Area</p>
+          </div>
+        </div>
+      </div>
+      <CustomModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        title="Request Available Units and Prices"
+        onSubmit={handleDownloadBrochure}
+      />
     </div>
   );
 };
