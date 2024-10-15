@@ -8,7 +8,21 @@ import axios, { AxiosResponse } from "axios";
 
 const HeroSection = () => {
   const [value, setValue] = useState();
-  const [countryCode, setCountryCode] = useState("AE");
+
+  const handleSubmit = async () => {
+    try {
+      console.log("form data", value);
+      await fetch("../app/api/downloadburecher", {
+        method: "POST",
+        body: JSON.stringify(value),
+        cache: "no-store",
+      });
+    } catch (err) {
+      console.log("🚀 ~ onSubmit ~ err:", err);
+    }
+  };
+
+  console.log("value", value);
 
   return (
     <div className="mx-auto w-full flex h-auto lg:h-[70vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 my-16">
@@ -74,15 +88,17 @@ const HeroSection = () => {
               One-click to download Price List and PDF brochure
             </span>
             <PhoneInput
-              defaultCountry={`${countryCode}`}
+              defaultCountry="AE"
               international
-              // defaultCountry="RU"
               placeholder="Enter phone number"
               className="p-3 !text-black  border-none !outline-none"
               value={value}
-              onChange={() => setValue}
+              onChange={(e: any) => setValue(e)}
             />
-            <button className="w-[63%] bg-red-500 text-white px-2 py-3 rounded-md">
+            <button
+              onClick={handleSubmit}
+              className="w-[63%] bg-red-500 text-white px-2 py-3 rounded-md"
+            >
               Download a broucher
             </button>
             <span className="text-white">*Time to download - 2 seconds</span>
