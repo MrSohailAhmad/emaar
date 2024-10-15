@@ -27,7 +27,9 @@ const RequestAvail = () => {
             presents new opportunities for exploration and growth. Come, embark
             on a journey of endless possibilities at The Valley by Emaar.
           </p>
+
           <button className="bg-red-600 text-white w-[50%] px-6 py-3  lg:w-auto">
+
             Request Available Units & Prices
           </button>
         </div>
