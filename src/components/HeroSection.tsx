@@ -4,25 +4,25 @@ import { images } from "../../public/images";
 
 const HeroSection = () => {
   return (
-    <div className="mx-auto w-full flex h-auto lg:h-[80vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 my-16">
-      <div className="w-full lg:w-[50%] h-full">
+    <div className="mx-auto w-full flex h-auto lg:h-[70vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 my-16">
+      <div className="w-[90%] lg:w-[50%] h-full">
         <Image
           className="w-full h-full"
           src={images.HEROIMG}
           alt="hero sec image"
         />
       </div>
-      <div className="w-[90%] md:w-[80%] lg:w-[50%] h-[80vh] lg:h-full  flex items-start gap-5 flex-col">
+      <div className="w-[90%] md:w-[80%] lg:w-[50%] h-[80vh] lg:h-full  flex items-start gap-3 flex-col">
         <div className="flex flex-col gap-3">
           <span className="w-full text-4xl  font-bold">
             Family-Oriented 3 & 4BR Villas{" "}
           </span>
-          <span className="text-4xl">
+          <span className="text-2xl font-[500]">
             in AVENA AT THE VALLEY by EMAAR, Dubai
           </span>
         </div>
         {/* LINE */}
-        <div />
+        <div className="p-1 w-[40%] bg-black" />
         <div>
           <p className="font-light text-[1rem]">
             Avena at The Valley is a place where modern living meets the gentle
