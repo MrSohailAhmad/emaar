@@ -32,7 +32,6 @@ const RequestAvail = () => {
   };
   const [countryCode, setCountryCode] = useState("+1"); // Default country code
 
- // src/components/requestAvail.tsx
 useEffect(() => {
   const fetchCountryCode = async () => {
     try {
