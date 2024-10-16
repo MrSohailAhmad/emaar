@@ -1,8 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { images } from "../../public/images";
 import CustomModal from "./CustomModal";
+
+
 
 const RequestAvail = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,6 +22,33 @@ const RequestAvail = () => {
     console.log("Download brochure for:", phoneNumber);
     closeModal();
   };
+  const [countryCode, setCountryCode] = useState("+1"); // Default country code
+
+  useEffect(() => {
+    const fetchCountryCode = async () => {
+      try {
+        const response = await fetch('/api/location', {
+          method: 'GET',
+        });
+  
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+  
+        const data = await response.json();
+        console.log('response====', data);
+  
+        setCountryCode(data.countryCode);
+      } catch (error) {
+        console.error('Failed to fetch country code:', error);
+      }
+    };
+  
+    fetchCountryCode();
+  }, []);
+  
+
+
   return (
     <div className="flex flex-col items-center lg:gap-10 my-10 pt-6 p-4 max-w-screen-xl mx-auto shadow-lg mt-20">
       <div className="flex flex-col lg:flex-row items-center justify-center mb-6 w-full">

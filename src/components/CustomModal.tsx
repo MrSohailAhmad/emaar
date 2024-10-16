@@ -5,36 +5,8 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { images } from "../../public/images";
 
-const CustomModal = ({ isOpen, onClose, title, onSubmit }) => {
-  const [countryCode, setCountryCode] = useState("+1"); // Default country code
-
-  useEffect(() => {
-    // Fetch the user's location based on IP
-    const fetchCountryCode = async () => {
-      try {
-        const res = await fetch("https://ipapi.co/json/");
-        const data = await res.json();
-
-        if (data && data.country_code) {
-          // Map the country codes to dialing codes
-          const countryDialingCodeMap = {
-            DE: "+49", // Germany
-            PK: "+92", // Pakistan
-            US: "+1",  // United States
-            // Add other mappings as needed
-          };
-
-          // Set the country dialing code
-          setCountryCode(countryDialingCodeMap[data.country_code] || "+1");
-        }
-      } catch (err) {
-        console.error("Failed to fetch country code:", err);
-      }
-    };
-
-    fetchCountryCode();
-  }, []);
-
+const CustomModal = ({ isOpen, onClose, title, onSubmit, countryCode }) => {
+  
   if (!isOpen) return null;
 
   return (
