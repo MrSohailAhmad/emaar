@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import { images } from "../../public/images";
+import { images } from "../../../public/images";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,23 +1,23 @@
 import { defineField, defineType } from "sanity";
 
-export const BrusherType = defineType({
-  name: "user_number",
-  title: "User Number",
+export const RequestCallType = defineType({
+  name: "request_call",
+  title: "Request Call",
   type: "document",
   fields: [
     defineField({
-      name: "user_number",
-      title: "User Number",
+      name: "name",
+      title: "Name",
       type: "string",
     }),
     defineField({
-      name: "user_ip_address",
-      title: "User IP Address",
+      name: "email",
+      title: "Email",
       type: "string",
     }),
     defineField({
-      name: "user_location",
-      title: "User Location",
+      name: "phone_number",
+      title: "Phone Number",
       type: "string",
     }),
     defineField({
