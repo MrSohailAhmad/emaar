@@ -6,7 +6,15 @@ export const BrusherType = defineType({
   type: "document",
   fields: [
     defineField({
-      name: "number",
+      name: "user_number",
+      type: "string",
+    }),
+    defineField({
+      name: "user_ip_address",
+      type: "string",
+    }),
+    defineField({
+      name: "user_location",
       type: "string",
     }),
   ],
