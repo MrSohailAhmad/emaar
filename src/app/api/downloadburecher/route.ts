@@ -1,21 +1,14 @@
+import { client } from "@/sanity/lib/client";
 import { createClient } from "next-sanity";
-
-const sanityClient = createClient({
-  projectId: "your_project_id", // Replace with your project ID
-  dataset: "production", // Replace with your dataset name
-  apiVersion: "2023-10-15", // Use today's date for API version
-  token: process.env.SANITY_API_TOKEN, // Add your Sanity token to .env.local
-  useCdn: false, // `false` if you want to ensure fresh data
-});
 
 export default async function handler(req: any, res: any) {
   console.log("req", req);
 
   if (req.method === "POST") {
-    const { phoneNumber } = req.body;
+    const { phoneNumber, ip, address } = req.body;
 
     try {
-      const newPhoneNumber = await sanityClient.create({
+      const newPhoneNumber = await client.create({
         _type: "user_number",
         phoneNumber,
         submittedAt: new Date().toISOString(),
@@ -33,4 +26,3 @@ export default async function handler(req: any, res: any) {
 // const getSanityData = async () => {
 //   return await client.fetch(`*[_type=="person"]`);
 // };
-
