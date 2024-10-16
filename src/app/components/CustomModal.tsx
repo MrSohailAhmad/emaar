@@ -3,10 +3,15 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { images } from "../../public/images";
+import { images } from "../../../public/images";
 
-const CustomModal = ({ isOpen, onClose, title, onSubmit, countryCode }) => {
-  
+const CustomModal = ({
+  isOpen,
+  onClose,
+  title,
+  onSubmit,
+  countryCode,
+}: any) => {
   if (!isOpen) return null;
 
   return (
@@ -45,9 +50,7 @@ const CustomModal = ({ isOpen, onClose, title, onSubmit, countryCode }) => {
         </div>
 
         {/* Modal Header */}
-        <h3 className="text-white text-base font-bold py-4">
-          {title}
-        </h3>
+        <h3 className="text-white text-base font-bold py-4">{title}</h3>
 
         {/* Download Button */}
         <div className="mb-5">
@@ -60,9 +63,7 @@ const CustomModal = ({ isOpen, onClose, title, onSubmit, countryCode }) => {
         </div>
 
         {/* Footer Text */}
-        <p className="text-white text-xs mt-3">
-          *Time to download - 2 seconds
-        </p>
+        <p className="text-white text-xs mt-3">*Time to download - 2 seconds</p>
       </div>
     </div>
   );

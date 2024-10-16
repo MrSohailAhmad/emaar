@@ -19,7 +19,10 @@ export async function GET() {
     console.log("Fetched data:", data);
 
     // Return the country code from the response
-    return NextResponse.json({ countryCode: data.calling_code });
+    return NextResponse.json({
+      message: "Success",
+      response: data,
+    });
   } catch (error: any) {
     console.error("Error fetching location data:", error);
     return NextResponse.json(
