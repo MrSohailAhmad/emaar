@@ -22,22 +22,45 @@
 
 
 
-// pages/api/location.js
-export default async function handler(req, res) {
-    if (req.method !== 'GET') {
-      // Only allow GET requests
-      return res.status(405).json({ message: "Method Not Allowed" });
+// // src/app/api/location/route.ts
+// import { NextResponse } from 'next/server';
+
+// export async function GET() {
+//   try {
+//     const data = { countryCode: 'US' }; // Example response
+//     console.log('data', data);
+//     return NextResponse.json(data);
+//   } catch (error) {
+//     return NextResponse.json({ message: 'Error fetching location data' }, { status: 500 });
+//   }
+// }
+
+// src/app/api/location/route.ts
+// src/app/api/location/route.ts
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  try {
+    // Call the IP API to get the country code
+    const response = await fetch('https://api.ipgeolocation.io/ipgeo?apiKey=155b50fa9458498c9cfcda3fac325990');
+    
+    // Check if the response is OK
+    if (!response.ok) {
+      console.error(`Failed to fetch from IP API: ${response.status} ${response.statusText}`);
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-  
-    try {
-      const data = { countryCode: 'US' }; // Example response
-      console.log('data', data);
-      res.status(200).json(data);
-    } catch (error) {
-      res.status(500).json({ message: "Error fetching location data" });
-    }
+
+    const data = await response.json();
+    console.log('Fetched data:', data);
+
+    // Return the country code from the response
+    return NextResponse.json({ countryCode: data.calling_code });
+  } catch (error) {
+    console.error('Error fetching location data:', error);
+    return NextResponse.json({ message: 'Error fetching location data', error: error.message }, { status: 500 });
   }
-  
+}
+
   
 
 // app/api/location/route.js or route.ts

@@ -4,8 +4,6 @@ import React, { useState,useEffect } from "react";
 import { images } from "../../public/images";
 import CustomModal from "./CustomModal";
 
-
-
 const RequestAvail = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -19,34 +17,45 @@ const RequestAvail = () => {
 
   const handleDownloadBrochure = () => {
     // Logic for downloading the PDF brochure
-    console.log("Download brochure for:", phoneNumber);
+     // Create a temporary link element
+     const link = document.createElement('a');
+
+     // Set the URL to your PDF file located in the public folder
+     link.href = '/brochure/brochure.pdf'; // Correct path in public folder
+     link.download = 'brochure.pdf'; // The name the file will have when downloaded
+ 
+     // Programmatically click the link to trigger the download
+     document.body.appendChild(link); // Append to body
+     link.click(); // Trigger click
+     document.body.removeChild(link); // Clean up
     closeModal();
   };
   const [countryCode, setCountryCode] = useState("+1"); // Default country code
 
-  useEffect(() => {
-    const fetchCountryCode = async () => {
-      try {
-        const response = await fetch('/api/location', {
-          method: 'GET',
-        });
-  
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-  
-        const data = await response.json();
-        console.log('response====', data);
-  
-        setCountryCode(data.countryCode);
-      } catch (error) {
-        console.error('Failed to fetch country code:', error);
+ // src/components/requestAvail.tsx
+useEffect(() => {
+  const fetchCountryCode = async () => {
+    try {
+      const response = await fetch('/api/location', {
+        method: 'GET',
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-    };
-  
-    fetchCountryCode();
-  }, []);
-  
+
+      const data = await response.json();
+      // console.log('response====', data);
+
+      setCountryCode(data.countryCode);
+    } catch (error) {
+      console.error('Failed to fetch country code:', error);
+    }
+  };
+
+  fetchCountryCode();
+}, []);
+
 
 
   return (
@@ -127,6 +136,7 @@ const RequestAvail = () => {
         onClose={closeModal}
         title="One-click to download Available Units and Price brochure"
         onSubmit={handleDownloadBrochure}
+        countryCode={countryCode}
       />
     </div>
   );
