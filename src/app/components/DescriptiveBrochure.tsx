@@ -1,8 +1,9 @@
+"use client";
 import React from "react";
 
 const DescriptiveBrochure = () => {
   return (
-    <div className="relative bg-gray-800">
+    <div className="p-8 brochureImg shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-3xl mx-auto mt-20 ">
       {/* Background image (if any) */}
       <div className="absolute inset-0 bg-opacity-60"></div>
 

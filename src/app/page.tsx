@@ -1,4 +1,5 @@
 import AvailLocationMap from "./components/AvailLocationMap";
+import DescriptiveBrochure from "./components/DescriptiveBrochure";
 import FloorPlan from "./components/FloorPlan";
 import HeroSection from "./components/HeroSection";
 import ImageGallery from "./components/ImageGallery";
@@ -14,13 +15,12 @@ export default function Home() {
       <div className="container  mx-auto my-8 ">
         <HeroSection />
         <RequestAvail />
-          {/* <ImageGallery /> */}
-        {/* <DescriptiveBrochure /> */}
-        <FloorPlan/>
+        <DescriptiveBrochure />
+        <ImageGallery />
+        <FloorPlan />
         <PaymentPlans />
         <AvailLocationMap />
         <OurExpertForm />
-
       </div>
     </>
   );

@@ -80,6 +80,11 @@
 font-size: 1.2rem !important;
 font-weight: 900 !important;
 }
+.swiper-pagination{
+  bottom: -2rem !important;
+  z-index: 99999 !important;
+  position: absolute !important;
+}
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: #000 !important;
   scale: 1.5 !important;
@@ -121,6 +126,12 @@ font-weight: 900 !important;
 .PhoneInput{
     background-color: #fff;
     border-radius: 5px;
+}
+
+.brochureImg{
+  background-image: url("/public/img1.jpg");
+  background-size: cover; /* To cover the entire card */
+  background-position: center; /* To center the image */
 }
 
 /* styles/globals.css or styles/YourComponent.module.css */

@@ -34,11 +34,11 @@ const ImageGallery: React.FC = () => {
   ];
 
   return (
-    <div className="p-8  bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-20">
+    <div className="p-8  bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-3xl mx-auto mt-20">
       <div>
         <h1 className="font-extrabold text-6xl">GALLERY</h1>
       </div>
-      <div className="py-10">
+      <div className="my-10">
         <Swiper
           slidesPerView={"auto"}
           centeredSlides={true}
