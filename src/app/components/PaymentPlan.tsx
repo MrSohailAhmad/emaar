@@ -45,11 +45,10 @@ const PaymentPlans = () => {
           <button
             key={index}
             onClick={() => setActiveTab(index)}
-            className={`mr-4 md:mr-8 pb-2 text-sm md:text-md font-small ${
-              activeTab === index
+            className={`mr-4 md:mr-8 pb-2 text-sm md:text-md font-small ${activeTab === index
                 ? "text-black border-b-4 border-black"
                 : "text-black border-b-2 border-transparent"
-            }`}
+              }`}
           >
             {plan.title}
           </button>
@@ -70,7 +69,7 @@ const PaymentPlans = () => {
           </div>
         ))}
       </div>
-      <button className="text-black border border-black text-black px-4 py-2 md:px-4 md:py-3 text-center w-full sm:w-auto shadow hover:shadow-lg transition-shadow">
+      <button className="text-black border border-black text-black px-4 py-2 md:px-4 md:py-3 text-center w-full sm:w-auto shadow hover:shadow-lg transition-shadow buttonHoverAnimation">
         Reserve Yours Today
       </button>
     </div>

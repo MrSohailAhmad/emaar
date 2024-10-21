@@ -27,8 +27,10 @@ const AvailLocationMap = () => {
       </div>
       <div className="flex items-center justify-center gap-10">
         {/* Left Section: Image */}
-        <div className="w-[47%] h-full imgshadow">{images.Outdoor}</div>
-
+        {/* <div className="w-[47%] h-full imgshadow">{images.Outdoor}</div> */}
+        <div className={`w-[47%] h-full imgshadow openAnimation`}>
+          {images.Outdoor}
+        </div>
         {/* Right Section: Text */}
         <div className="w-[45%] ">
           <p className="text-sm md:text-md lg:text-lg text-black mb-6 lg:text-left">
@@ -47,9 +49,10 @@ const AvailLocationMap = () => {
           </p>
 
           <div className="flex justify-center w-full">
-            <button className="bg-[#ea1214] text-white w-[50%] px-6 py-3 lg:w-auto">
-              Download Location Map
-            </button>
+          <button className="bg-[#ea1214] text-white w-[50%] px-6 py-3 lg:w-auto buttonHoverAnimation">
+  Download Location Map
+</button>
+
           </div>
         </div>
       </div>

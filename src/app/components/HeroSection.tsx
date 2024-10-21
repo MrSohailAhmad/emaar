@@ -137,7 +137,12 @@ const HeroSection = () => {
 
   return (
     <div className="mx-auto w-full flex h-auto lg:h-[70vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 my-16">
-      <div className="w-[90%] lg:w-[50%] h-full">
+      <div
+        className="w-[90%] lg:w-[50%] h-full"
+        style={{
+          animation: 'waveUp 2s ease-in-out forwards',
+        }}
+      >
         <Image
           className="w-full h-full"
           src={images.HEROIMG}
@@ -210,9 +215,9 @@ const HeroSection = () => {
             {/* Error message */}
             <button
               onClick={handleSubmit}
-              className="w-[63%] bg-red-500 text-white px-2 py-3 rounded-md"
+              className="w-[63%] bg-red-500 text-white px-2 py-3 rounded-md buttonAnimation"
             >
-              {loading ? "Downloading..." : " Download a brochure"}
+              {loading ? "Downloading..." : "Download a brochure"}
             </button>
             <span className="text-white">*Time to download - 2 seconds</span>
           </div>

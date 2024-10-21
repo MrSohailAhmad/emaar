@@ -70,7 +70,9 @@ const RequestAvail = () => {
       </div>
       <div className="flex items-center justify-center gap-10">
         {/* Left Section: Image */}
-        <div className="w-[47%] h-full imgshadow">{images.Outdoor}</div>
+        <div className={`w-[47%] h-full imgshadow openAnimation`}>
+          {images.Outdoor}
+        </div>
 
         {/* Right Section: Text */}
         <div className="w-[45%] ">
@@ -90,7 +92,7 @@ const RequestAvail = () => {
           </p>
 
           <button
-            className="bg-red-600 text-white w-[50%] px-6 py-3  lg:w-auto"
+            className="bg-red-600 text-white w-[50%] px-6 py-3 lg:w-auto buttonAnimation"
             onClick={openModal}
           >
             Request Available Units & Prices

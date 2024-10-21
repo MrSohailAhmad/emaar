@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'flowbite';
+
 
 .imgshadow {
     box-shadow: -19px -53px 0px -19px #56abe4;
@@ -70,4 +72,127 @@
   .animate-up-down {
     animation: moveUpAndDown 2s ease-in-out infinite; /* Change 2s to control the duration */
   }
+
+  @keyframes waveUp {
+    0% {
+      transform: translateY(30%); /* Reduced from 100% to 30% */
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(-5%); /* Reduced from -10% to -5% */
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
   
+/* Add this to your CSS file or CSS module */
+@keyframes openPage {
+  0% {
+    transform: scale(0) rotate(-30deg); /* Start scaled down and slightly rotated */
+    opacity: 0; /* Start invisible */
+    transform-origin: top left; /* Set the pivot point */
+  }
+  50% {
+    transform: scale(0.5) rotate(-15deg); /* Slightly larger scale at the midpoint */
+    opacity: 0.5; /* Half visible */
+  }
+  100% {
+    transform: scale(1) rotate(0); /* End at original size and rotation */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+.openAnimation {
+  animation: openPage 2s ease forwards; /* Adjust duration to 2 seconds for a slower effect */
+}
+
+/* Add this to your CSS file or CSS module */
+@keyframes buttonAnimate {
+  0% {
+    transform: scale(1); /* Start at normal size */
+  }
+  50% {
+    transform: scale(1.05); /* Slightly scale up */
+  }
+  100% {
+    transform: scale(1); /* Return to normal size */
+  }
+}
+
+.buttonAnimation {
+  display: inline-block; /* Ensure the button behaves like an inline-block element */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.buttonAnimation:hover {
+  animation: buttonAnimate 0.5s ease forwards; /* Trigger animation on hover */
+}
+/* Add this to your CSS file or CSS module */
+@keyframes buttonAnimate {
+  0% {
+    transform: scale(1); /* Start at normal size */
+  }
+  50% {
+    transform: scale(1.05); /* Slightly scale up */
+  }
+  100% {
+    transform: scale(1); /* Return to normal size */
+  }
+}
+
+.buttonAnimation {
+  display: inline-block; /* Ensure the button behaves like an inline-block element */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.buttonAnimation:hover {
+  animation: buttonAnimate 0.5s ease forwards; /* Trigger animation on hover */
+}
+
+/* Add this to your CSS file or CSS module */
+@keyframes buttonHoverAnimate {
+  0% {
+    transform: scale(1); /* Start at normal size */
+  }
+  50% {
+    transform: scale(1.05); /* Slightly scale up */
+  }
+  100% {
+    transform: scale(1); /* Return to normal size */
+  }
+}
+
+.buttonHoverAnimation {
+  display: inline-block; /* Ensure the button behaves like an inline-block element */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.buttonHoverAnimation:hover {
+  animation: buttonHoverAnimate 0.5s ease forwards; /* Trigger animation on hover */
+}
+/* Add this to your CSS file or CSS module */
+@keyframes buttonHoverAnimate {
+  0% {
+    transform: scale(1); /* Start at normal size */
+  }
+  50% {
+    transform: scale(1.05); /* Slightly scale up */
+  }
+  100% {
+    transform: scale(1); /* Return to normal size */
+  }
+}
+
+.buttonHoverAnimation {
+  display: inline-block; /* Ensure the button behaves like an inline-block element */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.buttonHoverAnimation:hover {
+  animation: buttonHoverAnimate 0.5s ease forwards; /* Trigger animation on hover */
+}
+
+

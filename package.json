@@ -12,13 +12,16 @@
     "@sanity/image-url": "1",
     "@sanity/vision": "3",
     "axios": "^1.7.7",
+    "flowbite": "^2.5.2",
     "next": "14.2.15",
     "next-sanity": "9",
     "react": "^18",
     "react-dom": "^18",
     "react-phone-input-2": "^2.15.1",
     "react-phone-number-input": "^3.4.8",
+    "react-slick": "^0.30.2",
     "sanity": "3",
+    "slick-carousel": "^1.8.1",
     "styled-components": "6"
   },
   "devDependencies": {
