@@ -46,6 +46,70 @@
   columns: black !important;
   
 }
+.swiper-wrapper{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: start !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+.swiper-slide{
+  width: 60% !important;
+  height: 100% !important;
+}
+
+
+.swiper-button-prev,
+.swiper-button-next{
+  height: 3rem !important;
+  width: 3rem !important;
+  border-radius: 50%;
+  background-color: #000 !important;
+  color: #fff !important;
+  font-size: 1.2rem !important;
+  padding: 10px;
+}
+.swiper-button-next{
+  margin-right: 13%;
+}
+.swiper-button-prev{
+  margin-left: 13%;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after{
+font-size: 1.2rem !important;
+font-weight: 900 !important;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #000 !important;
+  scale: 1.5 !important;
+}
+.swiper-pagination-bullet{
+  background: #8b8b8b !important;
+  width: 10px !important;
+  height: 10px !important;
+
+}
+.swiper-slide img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  position: relative !important;
+}
+.swiper-slide-prev:after,
+.swiper-slide-next:after{
+  content: '';
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(206, 206, 206, 0.486) !important; /* Semi-transparent black overlay */
+  opacity: 1 !important;
+  transition: opacity 0.5s ease !important; 
+  z-index: 1 !important; /* Ensure it's on top of the image */
+}
 
 .phoneitem .react-tel-input .flag-dropdown.open {
   background: transparent !important;
