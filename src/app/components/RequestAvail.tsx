@@ -56,8 +56,8 @@ const RequestAvail = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center lg:gap-10 my-10 pt-6 p-4 max-w-screen-xl mx-auto shadow-lg mt-20">
-      <div className="flex flex-col lg:flex-row items-center justify-center mb-6 w-full">
+    <div className="p-8 bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-20">
+    <div className="flex flex-col lg:flex-row items-center justify-center mb-6 w-full">
         {/* Left Spacer */}
         <div className="lg:mr-12 w-full lg:w-[10%]"></div>{" "}
         {/* Increased margin on the left */}
