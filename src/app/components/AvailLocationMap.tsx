@@ -1,9 +1,12 @@
 import React from "react";
 import { images } from "../../../public/images";
 
-const AvailLocationMap = () => {
+const AvailLocationMap = ({ availRef }: any) => {
   return (
-    <div className="flex flex-col items-center lg:gap-10 my-10 pt-6 p-4 max-w-screen-xl mx-auto shadow-lg mt-20">
+    <div
+      ref={availRef}
+      className="flex flex-col items-center lg:gap-10 my-10 pt-6 p-4 max-w-screen-xl mx-auto shadow-lg mt-20"
+    >
       <div className="flex flex-col lg:flex-row items-center justify-center mb-6 w-full gap-8">
         {/* Left Spacer */}
         <div className="lg:mr-12 w-full lg:w-[10%]"></div>{" "}
@@ -49,10 +52,9 @@ const AvailLocationMap = () => {
           </p>
 
           <div className="flex justify-center w-full">
-          <button className="bg-[#ea1214] text-white w-[50%] px-6 py-3 lg:w-auto buttonHoverAnimation">
-  Download Location Map
-</button>
-
+            <button className="bg-[#ea1214] text-white w-[50%] px-6 py-3 lg:w-auto buttonHoverAnimation">
+              Download Location Map
+            </button>
           </div>
         </div>
       </div>

@@ -32,11 +32,14 @@ const paymentPlansData: PaymentPlan[] = [
   },
 ];
 
-const PaymentPlans = () => {
+const PaymentPlans = ({ payRef }: any) => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="p-8 bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-20">
+    <div
+      ref={payRef}
+      className="p-8 bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-20"
+    >
       <h2 className="text-2xl md:text-3xl font-bold mb-6 text-black text-center md:text-left">
         PAYMENT PLANS
       </h2>
@@ -45,10 +48,11 @@ const PaymentPlans = () => {
           <button
             key={index}
             onClick={() => setActiveTab(index)}
-            className={`mr-4 md:mr-8 pb-2 text-sm md:text-md font-small ${activeTab === index
+            className={`mr-4 md:mr-8 pb-2 text-sm md:text-md font-small ${
+              activeTab === index
                 ? "text-black border-b-4 border-black"
                 : "text-black border-b-2 border-transparent"
-              }`}
+            }`}
           >
             {plan.title}
           </button>

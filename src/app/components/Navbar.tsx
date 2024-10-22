@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { images } from "../../../public/images";
 
-const Navbar = () => {
+const Navbar = ({ scrollToSection }: any) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -11,37 +11,37 @@ const Navbar = () => {
   };
   const menu = [
     {
-      path: "",
+      path: "heroRef",
       title: "Home",
     },
     {
-      path: "",
+      path: "reqRef",
       title: "About",
     },
     {
-      path: "",
+      path: "desRef",
       title: "Feature",
     },
     {
-      path: "",
+      path: "imgRef",
       title: "Gallery",
     },
     {
-      path: "",
+      path: "payRef",
       title: "Payment plan",
     },
     {
-      path: "",
+      path: "floorRef",
       title: "Floor plan",
     },
     {
-      path: "",
+      path: "availRef",
       title: "contact",
     },
   ];
 
   return (
-    <nav className="bg-white border-gray-200 drop-shadow-lg sticky ">
+    <nav className="bg-white border-gray-200 top-0 z-[999] drop-shadow-lg sticky">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a
           href="/"
@@ -79,9 +79,9 @@ const Navbar = () => {
         >
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white text-white">
             {menu.map((item, idx) => (
-              <li key={idx}>
+              <li onClick={() => scrollToSection(item.path)} key={idx}>
                 <Link
-                  href={item.path}
+                  href={""}
                   className="block py-2 px-3  uppercase text-gray-500 font-bold rounded md:bg-transparent  md:p-0 "
                   aria-current="page"
                 >

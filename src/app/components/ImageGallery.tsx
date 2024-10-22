@@ -13,7 +13,7 @@ import "swiper/css/pagination";
 import { Keyboard, Mousewheel, Navigation, Pagination } from "swiper/modules";
 import { images } from "../../../public/images";
 
-const ImageGallery: React.FC = () => {
+const ImageGallery = ({ imgRef }: any) => {
   const galleryImages = [
     images.GalleryImg1("!w-full !h-full"),
     images.GalleryImg1("!w-full !h-full"),
@@ -34,7 +34,10 @@ const ImageGallery: React.FC = () => {
   ];
 
   return (
-    <div className="p-8  bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-3xl mx-auto mt-20">
+    <div
+      ref={imgRef}
+      className="p-8  bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-20"
+    >
       <div>
         <h1 className="font-extrabold text-6xl">GALLERY</h1>
       </div>

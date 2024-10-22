@@ -6,7 +6,7 @@ import "react-phone-input-2/lib/style.css";
 import { images } from "../../../public/images";
 import { isValidPhoneNumber } from "react-phone-number-input";
 
-const HeroSection = () => {
+const HeroSection = ({ heroRef }: any) => {
   const [value, setValue] = useState("");
   const [countryCode, setCountryCode] = useState("AE"); // Default country code
   const [userLocation, setUserLocation] = useState({
@@ -133,14 +133,15 @@ const HeroSection = () => {
     setUserLocation((prev) => ({ ...prev, user_number: "+" + value }));
   };
 
-  console.log("userLocation", userLocation);
-
   return (
-    <div className="mx-auto w-full flex h-auto lg:h-[70vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 my-16">
+    <div
+      ref={heroRef}
+      className="mx-auto w-full flex h-auto lg:h-[70vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 my-16"
+    >
       <div
         className="w-[90%] lg:w-[50%] h-full"
         style={{
-          animation: 'waveUp 2s ease-in-out forwards',
+          animation: "waveUp 2s ease-in-out forwards",
         }}
       >
         <Image

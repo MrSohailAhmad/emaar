@@ -3,61 +3,118 @@
 import React, { useState, useEffect } from "react";
 import CustomModal from "./CustomModal";
 import { images } from "../../../public/images";
+import { isValidPhoneNumber } from "react-phone-number-input";
 
-const RequestAvail = () => {
+const RequestAvail = ({ reqRef }: any) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [phoneNumber, setPhoneNumber] = useState("");
-
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState(""); // State to handle validation error
+  const [countryCode, setCountryCode] = useState("AE"); // Default country code
+  const [value, setValue] = useState("");
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+  const [userLocation, setUserLocation] = useState({
+    user_location: "",
+    user_ip_address: "",
+    user_number: "",
+  });
 
-  const handlePhoneNumberChange = (e) => {
-    setPhoneNumber(e.target.value);
+  const fetchCountryCode = async () => {
+    try {
+      const data = await fetch("/api/location", {
+        method: "GET",
+      });
+
+      if (!data.ok) {
+        throw new Error(`HTTP error! status: ${data.status}`);
+      }
+
+      const { response } = await data.json();
+
+      setCountryCode(response?.country_code2);
+      setUserLocation({
+        user_location: response?.country_capital || "",
+        user_ip_address: response?.ip || "",
+      });
+    } catch (error) {
+      console.error("Failed to fetch country code:", error);
+    }
   };
-
-  const handleDownloadBrochure = () => {
-    // Logic for downloading the PDF brochure
-    // Create a temporary link element
-    const link = document.createElement("a");
-
-    // Set the URL to your PDF file located in the public folder
-    link.href = "/brochure/brochure.pdf"; // Correct path in public folder
-    link.download = "brochure.pdf"; // The name the file will have when downloaded
-
-    // Programmatically click the link to trigger the download
-    document.body.appendChild(link); // Append to body
-    link.click(); // Trigger click
-    document.body.removeChild(link); // Clean up
-    closeModal();
-  };
-  const [countryCode, setCountryCode] = useState("+1"); // Default country code
 
   useEffect(() => {
-    const fetchCountryCode = async () => {
-      try {
-        const response = await fetch("/api/location", {
-          method: "GET",
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        // console.log('response====', data);
-
-        setCountryCode(data.countryCode);
-      } catch (error) {
-        console.error("Failed to fetch country code:", error);
-      }
-    };
-
     fetchCountryCode();
   }, []);
 
+  const postUserData = async () => {
+    try {
+      // if (!value) return;
+      const response = await fetch("/api/downloadburecher", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json", // Make sure to specify the content type
+        },
+        body: JSON.stringify({
+          user_number: value,
+          user_location: userLocation.user_location,
+          user_ip_address: userLocation.user_ip_address,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Failed to fetch country code:", error);
+    }
+  };
+
+  const handleDownloadBrochure = async () => {
+    console.log("api called");
+    if (!value) {
+      setError("Please Enter Phone Number");
+      setLoading(false);
+      return;
+    }
+    console.log("api called", value);
+    if (!isValidPhoneNumber(value)) {
+      setError("Please enter a valid phone number.");
+      setLoading(false);
+      return;
+    }
+    setLoading(true);
+    const { response } = await postUserData();
+
+    if (!response) {
+      // Check if the phone number is empty
+      setError("Please enter a valid phone number.");
+      return;
+    }
+    if (response) {
+      setLoading(false);
+      // Logic for downloading the PDF brochure
+      // Create a temporary link element
+      const link = document.createElement("a");
+
+      // Set the URL to your PDF file located in the public folder
+      link.href = "/brochure/brochure.pdf"; // Correct path in public folder
+      link.download = "brochure.pdf"; // The name the file will have when downloaded
+
+      // Programmatically click the link to trigger the download
+      document.body.appendChild(link); // Append to body
+      link.click(); // Trigger click
+      document.body.removeChild(link); // Clean up
+    }
+  };
+
   return (
-    <div className="p-8 bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-20">
-    <div className="flex flex-col lg:flex-row items-center justify-center mb-6 w-full">
+    <div
+      ref={reqRef}
+      className="p-8 bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-20"
+    >
+      <div className="flex flex-col lg:flex-row items-center justify-center mb-6 w-full">
         {/* Left Spacer */}
         <div className="lg:mr-12 w-full lg:w-[10%]"></div>{" "}
         {/* Increased margin on the left */}
@@ -143,7 +200,12 @@ const RequestAvail = () => {
         onClose={closeModal}
         title="One-click to download Available Units and Price brochure"
         onSubmit={handleDownloadBrochure}
-        countryCode={countryCode}
+        value={value}
+        setUserLocation={setUserLocation}
+        setValue={setValue}
+        loading={loading}
+        error={error}
+        setError={setError}
       />
     </div>
   );

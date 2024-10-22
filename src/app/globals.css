@@ -9,7 +9,9 @@
     -webkit-box-shadow: -19px -53px 0px -19px #56abe4;
     -moz-box-shadow: -19px -53px 0px -19px #56abe4;
 }
-
+section {
+  scroll-margin-top: 95px; /* Adjust to the height of your navbar */
+}
 .PhoneInputInput{
     border: none;
     outline: none;
@@ -47,7 +49,9 @@
   
 }
 .swiper-wrapper{
-  display: flex !important;
+  display: flex !important;section {
+    scroll-margin-top: 80px; /* Adjust to the height of your navbar */
+  }
   align-items: center !important;
   justify-content: start !important;
   height: 100% !important;
@@ -122,12 +126,42 @@ font-weight: 900 !important;
   color: black !important;
   
 }
-
-.PhoneInput{
-    background-color: #fff;
-    border-radius: 5px;
+.desInput .react-tel-input  .form-control{
+  background:none !important;
+  color: #fff !important;
+  border: none !important;
+  outline: none !important;
+  width: 100% !important;
+}
+.desInput .react-tel-input{
+  width: 100% !important;
+  border: none !important;
+  outline: none !important;
+  padding: 3px !important;
 }
 
+.desInput .react-tel-input  .flag-dropdown {
+  background-color:transparent !important;
+  /* color: #fff !important; */
+}
+
+.desInput .react-tel-input  .flag-dropdown.open{
+  background:transparent !important;
+} 
+
+.desInput {
+  width: 100%;
+  border :1px solid #fff;
+}
+.desInput .flag-dropdown{
+  border: 0 !important;
+}
+.desInput .flag-dropdown:hover,
+.desInput .flag-dropdown:focus {
+  background-color: transparent !important;
+  background: transparent !important;
+
+}
 .brochureImg{
   background-image: url("/public/img1.jpg");
   background-size: cover; /* To cover the entire card */

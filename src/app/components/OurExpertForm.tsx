@@ -6,12 +6,12 @@ import "@/app/globals.css";
 import { useEffect } from "react";
 import { isValidPhoneNumber } from "react-phone-number-input";
 
-const OurExpertForm = () => {
+const OurExpertForm = ({ exprtRef }: any) => {
   const [value, setValue] = useState("");
   const [countryCode, setCountryCode] = useState("AE"); // Default country code
 
   const [formSubmitted, setFormSubmitted] = useState<boolean>();
-  const [error, setError] = useState(""); // State to handle validation error
+  const [error, setError] = useState<boolean | string>(""); // State to handle validation error
   const [loading, setLoading] = useState<boolean>(false);
   const [state, setState] = useState({
     email: "",
@@ -40,7 +40,7 @@ const OurExpertForm = () => {
       }
 
       const data = await response.json();
-      console.log("Fetched location data:", data);
+      // console.log("Fetched location data:", data);
 
       // Set the country code using the response data
       setCountryCode(data.response.country_code2 || "AE");
@@ -93,7 +93,7 @@ const OurExpertForm = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     setLoading(true);
 
@@ -121,10 +121,11 @@ const OurExpertForm = () => {
     }
   };
 
-  console.log("state", state);
-
   return (
-    <div className="bg-[#001d35] text-white p-10 flex flex-col md:flex-row justify-center items-center md:items-start max-w-screen-xl mx-auto py-20 mt-20">
+    <div
+      ref={exprtRef}
+      className="bg-[#001d35] text-white p-10 flex flex-col md:flex-row justify-center items-center md:items-start max-w-screen-xl mx-auto py-20 mt-20"
+    >
       <div className="max-w-screen-xl w-full flex flex-col md:flex-row justify-center items-start mx-auto px-4">
         {/* Left Text */}
         <div className="md:w-[50%] flex items-center justify-center h-full">
@@ -140,24 +141,26 @@ const OurExpertForm = () => {
           {/* Name Input */}
           <div className="flex flex-col w-full">
             <input
+              style={{ borderBottom: "2px solid #fff" }}
               onChange={(e: any) =>
                 setState((prev) => ({ ...prev, name: e.target.value }))
               }
               type="text"
               placeholder="Your name"
-              className="p-3 bg-transparent border-b-2 text-white outline-none border-b-[#fff]"
+              className="p-3 bg-transparent  border-0 text-white outline-none "
             />
           </div>
 
           {/* Email Input */}
           <div className="flex flex-col">
             <input
+              style={{ borderBottom: "2px solid #fff" }}
               onChange={(e: any) =>
                 setState((prev) => ({ ...prev, email: e.target.value }))
               }
               type="email"
               placeholder="Your e-mail"
-              className="p-3 bg-transparent border-b-2 text-white outline-none border-b-[#fff]"
+              className="p-3 bg-transparent border-0  text-white outline-none "
             />
           </div>
 
@@ -170,7 +173,7 @@ const OurExpertForm = () => {
                 initialValueFormat="international"
                 international
                 placeholder="Enter phone number"
-                className="p-3 !text-black border-none !outline-none"
+                className="p-3 !text-black !border-none !outline-none"
                 value={value}
                 onChange={handleInputChange}
                 error={
