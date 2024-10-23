@@ -5,39 +5,20 @@ import { images } from "../../../public/images";
 
 const Navbar = ({ scrollToSection }: any) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null); // Track active menu item
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
   const menu = [
-    {
-      path: "heroRef",
-      title: "Home",
-    },
-    {
-      path: "reqRef",
-      title: "About",
-    },
-    {
-      path: "desRef",
-      title: "Feature",
-    },
-    {
-      path: "imgRef",
-      title: "Gallery",
-    },
-    {
-      path: "payRef",
-      title: "Payment plan",
-    },
-    {
-      path: "floorRef",
-      title: "Floor plan",
-    },
-    {
-      path: "availRef",
-      title: "contact",
-    },
+    { path: "heroRef", title: "Home" },
+    { path: "reqRef", title: "About" },
+    { path: "desRef", title: "Feature" },
+    { path: "imgRef", title: "Gallery" },
+    { path: "payRef", title: "Payment plan" },
+    { path: "floorRef", title: "Floor plan" },
+    { path: "availRef", title: "Contact" },
   ];
 
   return (
@@ -53,9 +34,9 @@ const Navbar = ({ scrollToSection }: any) => {
           data-collapse-toggle="navbar-default"
           type="button"
           onClick={toggleMenu}
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 "
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400"
           aria-controls="navbar-default"
-          aria-expanded="false"
+          aria-expanded={isOpen}
         >
           <span className="sr-only">Open main menu</span>
           <svg
@@ -74,19 +55,30 @@ const Navbar = ({ scrollToSection }: any) => {
             />
           </svg>
         </button>
-        <div
-          className={`${isOpen ? "block" : "hidden"} w-full md:block md:w-auto`}
-        >
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white text-white">
+        <div className={`${isOpen ? "block" : "hidden"} w-full md:block md:w-auto`}>
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
             {menu.map((item, idx) => (
-              <li onClick={() => scrollToSection(item.path)} key={idx}>
+              <li
+                key={idx}
+                onClick={() => scrollToSection(item.path)}
+                onMouseEnter={() => setActiveIndex(idx)}
+                onMouseLeave={() => setActiveIndex(null)}
+                onFocus={() => setActiveIndex(idx)}
+                onBlur={() => setActiveIndex(null)}
+                className="relative"
+              >
                 <Link
                   href={""}
-                  className="block py-2 px-3  uppercase text-gray-500 font-bold rounded md:bg-transparent  md:p-0 "
-                  aria-current="page"
+                  className="block py-2 px-3 uppercase text-gray-500 font-bold rounded md:bg-transparent md:p-0"
                 >
                   {item.title}
                 </Link>
+                {/* Floating Line */}
+                <span
+                  className={`absolute bottom-0 left-0 h-[2px] w-full bg-red-500 ${
+                    activeIndex === idx ? "block" : "hidden"
+                  }`}
+                />
               </li>
             ))}
           </ul>

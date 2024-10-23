@@ -67,7 +67,7 @@ const CustomModal = ({
 
   return (
     <div className="fixed inset-0 w-full bg-gray-800 bg-opacity-70 flex justify-center items-center z-50">
-      <div className="bg-[#414141] !max-w-screen-md sm:w-[80%] p-6 sm:p-8 relative rounded-lg text-center mx-4">
+      <div className="bg-[#414141] !max-w-screen-sm w-[70%] p-6 sm:p-8 relative rounded-lg text-center mx-4">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -84,7 +84,7 @@ const CustomModal = ({
           />
         </div>
         {countryCode && (
-          <div className="flex flex-col sm:flex-row justify-center items-center pt-8 w-[90%] mx-auto">
+          <div className="flex flex-col sm:flex-row justify-center items-center pt-8 w-[70%] mx-auto">
             <PhoneInput
               autoFormat
               defaultCountry={"AE"}
@@ -101,12 +101,12 @@ const CustomModal = ({
         <h3 className="text-white text-[.9rem] font-light py-4">{title}</h3>
         {error && <p className="text-red-500">{error}</p>}{" "}
         {/* Download Button */}
-        <div className="mb-5 w-[95%] mx-auto">
+        <div className="mb-5 w-[75%] mx-auto">
           <button
-            className="bg-red-600 text-white py-3 px-8 rounded-lg w-full sm:w-3/5 mx-auto block"
+            className="bg-red-600 text-white py-3 px-8 rounded-lg w-[75%] sm:w-3/5 mx-auto block"
             onClick={onSubmit}
           >
-            Download a brochure
+            {loading ? "Downloading ..." : "Download a brochure"}
           </button>
         </div>
         {/* Footer Text */}

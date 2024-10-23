@@ -404,3 +404,19 @@ p  {
   font-size: 12px;
   padding: 10px;
 }
+
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* li:hover {
+  animation: wave 0.5s ease infinite;
+} */

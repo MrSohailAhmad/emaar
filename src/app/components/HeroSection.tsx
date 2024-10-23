@@ -5,6 +5,9 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { images } from "../../../public/images";
 import { isValidPhoneNumber } from "react-phone-number-input";
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 
 const HeroSection = ({ heroRef }: any) => {
   const [value, setValue] = useState("");
@@ -16,7 +19,10 @@ const HeroSection = ({ heroRef }: any) => {
   });
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState(""); // State to handle validation error
-
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    threshold: 0.1, // Trigger animation when 10% of the image is in view
+  });
   // Fetch country code using the GET API
   const fetchCountryCode = async () => {
     try {
@@ -46,7 +52,17 @@ const HeroSection = ({ heroRef }: any) => {
   useEffect(() => {
     fetchCountryCode();
   }, []); // Empty dependency array ensures it runs only once on mount
-
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        y: 0,
+        opacity: 1,
+        transition: { duration: 1, ease: 'easeInOut' },
+      });
+    } else {
+      controls.start({ y: 50, opacity: 0 });
+    }
+  }, [controls, inView]);
   const postUserData = async () => {
     try {
       // if (!value) return;
@@ -138,18 +154,19 @@ const HeroSection = ({ heroRef }: any) => {
       ref={heroRef}
       className="mx-auto w-full flex h-auto lg:h-[70vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 my-16"
     >
-      <div
-        className="w-[90%] lg:w-[50%] h-full"
-        style={{
-          animation: "waveUp 2s ease-in-out forwards",
-        }}
-      >
-        <Image
-          className="w-full h-full"
-          src={images.HEROIMG}
-          alt="hero sec image"
-        />
-      </div>
+     
+         <motion.div
+      ref={ref}
+      className="w-[90%] lg:w-[50%] h-full"
+      animate={controls}
+      initial={{ y: 50, opacity: 0 }}
+    >
+      <Image
+        className="w-full h-full"
+        src={images.HEROIMG}
+        alt="hero sec image"
+      />
+    </motion.div>
       <div className="w-[90%] md:w-[80%] lg:w-[50%] h-[80vh] lg:h-full flex items-start gap-3 flex-col">
         <div className="flex flex-col gap-3">
           <span className="w-full text-4xl font-bold">
@@ -192,7 +209,7 @@ const HeroSection = ({ heroRef }: any) => {
         </div>
         <div className="w-full mt-20 align-bottom md:mt-auto flex items-center justify-center">
           <div className="w-[80%] flex items-center justify-center gap-2 flex-col bg-black/90 rounded-lg relative pb-5">
-            <div className="absolute top-[-50px]  transform -translate-x-1/2 w-20 h-20 sm:w-24 sm:h-24 animate-up-down">
+            <div className="absolute top-[-50px] left-1/1 transform -translate-x-1/2 w-20 h-20 sm:w-24 sm:h-24 animate-up-down">
               <Image
                 src={images.HEROIMG}
                 alt="hero section image"

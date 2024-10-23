@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import CustomModal from "./CustomModal";
 import { images } from "../../../public/images";
 import { isValidPhoneNumber } from "react-phone-number-input";
@@ -47,11 +48,10 @@ const RequestAvail = ({ reqRef }: any) => {
 
   const postUserData = async () => {
     try {
-      // if (!value) return;
       const response = await fetch("/api/downloadburecher", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json", // Make sure to specify the content type
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           user_number: value,
@@ -72,13 +72,11 @@ const RequestAvail = ({ reqRef }: any) => {
   };
 
   const handleDownloadBrochure = async () => {
-    console.log("api called");
     if (!value) {
       setError("Please Enter Phone Number");
       setLoading(false);
       return;
     }
-    console.log("api called", value);
     if (!isValidPhoneNumber(value)) {
       setError("Please enter a valid phone number.");
       setLoading(false);
@@ -88,25 +86,25 @@ const RequestAvail = ({ reqRef }: any) => {
     const { response } = await postUserData();
 
     if (!response) {
-      // Check if the phone number is empty
       setError("Please enter a valid phone number.");
       return;
     }
     if (response) {
       setLoading(false);
-      // Logic for downloading the PDF brochure
-      // Create a temporary link element
       const link = document.createElement("a");
-
-      // Set the URL to your PDF file located in the public folder
-      link.href = "/brochure/brochure.pdf"; // Correct path in public folder
-      link.download = "brochure.pdf"; // The name the file will have when downloaded
-
-      // Programmatically click the link to trigger the download
-      document.body.appendChild(link); // Append to body
-      link.click(); // Trigger click
-      document.body.removeChild(link); // Clean up
+      link.href = "/brochure/brochure.pdf";
+      link.download = "brochure.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
+  };
+
+  // Framer Motion variants for the image animation
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } },
+    hover: { scale: 1.1, transition: { duration: 0.3 } },
   };
 
   return (
@@ -115,24 +113,25 @@ const RequestAvail = ({ reqRef }: any) => {
       className="p-8 bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-20"
     >
       <div className="flex flex-col lg:flex-row items-center justify-center mb-6 w-full">
-        {/* Left Spacer */}
-        <div className="lg:mr-12 w-full lg:w-[10%]"></div>{" "}
-        {/* Increased margin on the left */}
+        <div className="lg:mr-12 w-full lg:w-[10%]"></div>
         <h2 className="text-1xl md:text-xl lg:text-3xl font-bold text-black mb-6 text-center lg:text-left">
           Avena The Valley Villas by EMAAR Dubai
         </h2>
-        {/* Black Divider */}
-        <div className="bg-black h-[6px] lg:w-[15%] w-full lg:ml-6"></div>{" "}
-        {/* Increased width and margin on the right */}
+        <div className="bg-black h-[6px] lg:w-[15%] w-full lg:ml-6"></div>
       </div>
-      <div className="flex items-center flex-col lg:flex-row lg:my-0 my-10 justify-center gap-10">
-        {/* Left Section: Image */}
-        <div className={`lg:w-[47%] w-full h-full imgshadow openAnimation`}>
-          {images.Outdoor("w-full h-ful")}
-        </div>
-
+      <div className="flex items-center justify-center gap-10">
+        {/* Left Section: Image with applied variant using Framer Motion */}
+        <motion.div
+          className="w-[47%] h-full border-4 border-gray-300 rounded-lg shadow-xl"
+          variants={imageVariants}
+          initial="hidden"
+          animate="visible"
+          whileHover="hover"
+        >
+          {images.Outdoor("")}
+        </motion.div>
         {/* Right Section: Text */}
-        <div className="lg:w-[45%] flex flex-col items-center w-full">
+        <div className="w-[45%]">
           <p className="text-sm md:text-md lg:text-lg text-black mb-6 lg:text-left">
             A quaint new town where life finds its inspiration amidst the vast
             shimmering sands and lush green open spaces. Welcome to The Valley
