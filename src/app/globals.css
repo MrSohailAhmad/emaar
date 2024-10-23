@@ -97,6 +97,7 @@ font-weight: 900 !important;
   background: #8b8b8b !important;
   width: 10px !important;
   height: 10px !important;
+  /* z-index: ; */
 
 }
 .swiper-slide img {
