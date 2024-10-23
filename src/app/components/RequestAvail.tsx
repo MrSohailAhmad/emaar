@@ -125,14 +125,14 @@ const RequestAvail = ({ reqRef }: any) => {
         <div className="bg-black h-[6px] lg:w-[15%] w-full lg:ml-6"></div>{" "}
         {/* Increased width and margin on the right */}
       </div>
-      <div className="flex items-center justify-center gap-10">
+      <div className="flex items-center flex-col lg:flex-row lg:my-0 my-10 justify-center gap-10">
         {/* Left Section: Image */}
-        <div className={`w-[47%] h-full imgshadow openAnimation`}>
-          {images.Outdoor}
+        <div className={`lg:w-[47%] w-full h-full imgshadow openAnimation`}>
+          {images.Outdoor("w-full h-ful")}
         </div>
 
         {/* Right Section: Text */}
-        <div className="w-[45%] ">
+        <div className="lg:w-[45%] flex flex-col items-center w-full">
           <p className="text-sm md:text-md lg:text-lg text-black mb-6 lg:text-left">
             A quaint new town where life finds its inspiration amidst the vast
             shimmering sands and lush green open spaces. Welcome to The Valley
@@ -149,7 +149,7 @@ const RequestAvail = ({ reqRef }: any) => {
           </p>
 
           <button
-            className="bg-red-600 text-white w-[50%] px-6 py-3 lg:w-auto buttonAnimation"
+            className="bg-red-600 text-sm md:text-lg text-white w-[50%] px-6 py-3 lg:w-auto buttonAnimation"
             onClick={openModal}
           >
             Request Available Units & Prices

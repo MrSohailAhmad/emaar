@@ -174,7 +174,7 @@ const DescriptiveBrochure = ({ desRef }: any) => {
         {/* Right Side: Form */}
         <div className="w-full md:w-1/2 ml-auto text-white p-6 md:p-10 rounded-lg">
           {/* Form Fields */}
-          <form className="space-y-4 border border-white p-6 w-80 mx-auto bg-transparent">
+          <form className="space-y-4 border border-white p-6 w-80 bg-[#4B504A]  relative !z-[999999] mx-auto lg:bg-transparent">
             <h3 className="text-center text-white font-semibold text-lg mb-4">
               FILL IN THE FORM
             </h3>
@@ -221,7 +221,7 @@ const DescriptiveBrochure = ({ desRef }: any) => {
             <div className="flex justify-center mt-4">
               <button
                 onClick={handleSubmit}
-                className="w-64 py-2 border border-white text-white font-semibold bg-transparent hover:bg-gray-500 transition duration-200"
+                className="w-64 py-2 border border-white text-white font-semibold bg-transparent  hover:bg-gray-500 transition duration-200"
               >
                 {loading ? "Submiting..." : "SEND"}
               </button>

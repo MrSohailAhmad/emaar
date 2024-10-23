@@ -5,7 +5,10 @@ import Image from "next/image";
 
 const FloorPlan = ({ floorRef }: any) => {
   return (
-    <div className="p-8 bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-20">
+    <div
+      ref={floorRef}
+      className="p-8 bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-20"
+    >
       <h2 className="title">Floor Plans of Avena The Valley Villas</h2>
       <div className="content">
         <div className="left-panel">
