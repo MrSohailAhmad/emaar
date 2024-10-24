@@ -79,6 +79,33 @@ section {
 .swiper-button-prev{
   margin-left: 13%;
 }
+@media screen and (max-width: 968px) {
+  .swiper-button-prev{
+    margin-left: 8%;
+  }
+
+  .swiper-button-next{
+    margin-right: 8%;
+  }
+
+}
+
+
+@media screen and (max-width: 600px) {
+  .swiper-button-prev{
+    margin-left: 2%;
+  }
+
+  .swiper-button-next{
+    margin-right: 2%;
+  }
+
+  .swiper-slide-active img{
+    width: 100%;
+  }
+
+}
+
 .swiper-button-prev:after,
 .swiper-button-next:after{
 font-size: 1.2rem !important;
@@ -327,6 +354,7 @@ font-weight: 900 !important;
 
 .content {
   display: flex;
+
   justify-content: space-between;
 }
 
@@ -338,9 +366,9 @@ font-weight: 900 !important;
 
 .bedroom-selector {
   display: flex;
-  flex-direction: row; /* Aligns items in a row */
-  gap: 10px; /* Adds spacing between buttons */
-  margin-bottom: 20px;
+  width: 54%;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -386,9 +414,10 @@ font-weight: 900 !important;
 }
 
 .floor-plan-images {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+display: flex;
+width: 100%;
+align-items: center;
+justify-content: center;
 }
 
 .floor-plan-image {

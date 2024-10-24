@@ -15,19 +15,19 @@ const FloorPlan = ({ floorRef }: any) => {
 
   const [error, setError] = useState(""); // State to handle validation error
   const [error2, setError2] = useState(""); // State to handle validation error
- 
+
   const [countryCode, setCountryCode] = useState("AE"); // Default country code
   const [countryCode2, setCountryCode2] = useState("AE"); // Default country code
-  
+
   const [value, setValue] = useState("");
   const [value2, setValue2] = useState("");
-  
+
   const openModal = () => setIsModalOpen(true);
   const openModal2 = () => setIsModalOpen2(true);
-  
+
   const closeModal = () => setIsModalOpen(false);
   const closeModal2 = () => setIsModalOpen2(false);
- 
+
   const [userLocation, setUserLocation] = useState({
     user_location: "",
     user_ip_address: "",
@@ -165,24 +165,30 @@ const FloorPlan = ({ floorRef }: any) => {
       ref={floorRef}
       className="p-8 bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-20"
     >
-      <h2 className="title">Floor Plans of Avena The Valley Villas</h2>
-      <div className="content">
+      <h2 className="title !my-10">Floor Plans of Avena The Valley Villas</h2>
+      <div className="flex items-start gap-10 flex-col md:flex-row">
         <div className="left-panel">
           <div className="floor-plan-info">
             <h3>3-Bedroom Unit</h3>
             <p>Total Area: 2217 sqft</p>
           </div>
           <div className="actions">
-            <button   onClick={openModal} className="bg-red-600 text-white w-[50%] px-6 py-3 lg:w-auto buttonAnimation my-2">
+            <button
+              onClick={openModal}
+              className="bg-red-600 text-white !w-[20rem] px-6 py-3 lg:w-auto buttonAnimation my-2"
+            >
               Get All Floor Plans.pdf
             </button>
-            <button onClick={openModal2} className="bg-red-600 text-white w-[50%] px-6 py-3 lg:w-auto buttonAnimation my-4">
+            <button
+              onClick={openModal2}
+              className="bg-red-600 text-white  !w-[20rem] px-6 py-3 lg:w-auto buttonAnimation my-4"
+            >
               Download Brochure.pdf
             </button>
           </div>
         </div>
-        <div className="right-panel">
-          <div className="bedroom-selector">
+        <div className="right-panel ">
+          <div className="bedroom-selector !items-start">
             <button className="bedroom-button active">3 BR</button>
             <button className="bedroom-button">4 BR</button>
           </div>
@@ -211,7 +217,7 @@ const FloorPlan = ({ floorRef }: any) => {
         error={error}
         setError={setError}
       />
-       <CustomModal
+      <CustomModal
         isOpen={isModalOpen2}
         onClose={closeModal2}
         title="One-click to download Available Units and Price brochure"

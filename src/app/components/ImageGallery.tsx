@@ -39,7 +39,9 @@ const ImageGallery = ({ imgRef }: any) => {
       className="p-8  bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-20"
     >
       <div>
-        <h1 className="font-extrabold text-4xl -ml-10">GALLERY</h1>
+        <h1 className="font-extrabold text-4xl text-center lg:text-start -ml-10">
+          GALLERY
+        </h1>
       </div>
       <div className="my-10">
         <Swiper

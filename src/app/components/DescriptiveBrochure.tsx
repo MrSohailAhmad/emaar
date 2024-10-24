@@ -134,34 +134,32 @@ const DescriptiveBrochure = ({ desRef }: any) => {
       className="relative max-w-screen-xl mx-auto p-10 bg-[#4B504A] rounded-lg overflow-hidden"
     >
       <motion.div
-        className="-bottom-[25rem] !-left-[15rem] rotate-6 absolute"
+        className="-bottom-[15rem] w-[80%] h-full !-left-[13rem] rotate-6 absolute"
         {...floatAnimation}
       >
         {images.FormImg("w-full h-full")}
       </motion.div>
       <div className="text-white ml-[10%] text-lg mb-8">
-        <h2 className="text-2xl font-bold text-start mb-6">
+        <h2 className="text-2xl font-bold text-start  mb-6">
           Descriptive Brochure
         </h2>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="flex flex-col  space-y-2">
-            <div className="flex items-start justify-start gap-10 w-[20rem] ">
-              <div>
-                <span className="font-light">
-                  <span className="mr-2">—</span> Lifestyle
-                </span>
-                <span className="font-light">
-                  <span className="mr-2">-</span> Gallery
-                </span>
-              </div>
-              <div>
-                <span className="font-light">
-                  <span className="mr-2">—</span> Masterplan
-                </span>
-                <span className="font-light">
-                  <span className="mr-2"></span> Floor plans
-                </span>
-              </div>
+        <div className="flex items-center w-full gap-4">
+          <div className="flex md:items-start items-center  justify-start gap-10 w-full ">
+            <div>
+              <span className="font-light flex items-center text-center md:text-start">
+                <span className="mr-2">—</span> Lifestyle
+              </span>
+              <span className="font-light">
+                <span className="mr-2">—</span> Gallery
+              </span>
+            </div>
+            <div className="flex items-center flex-col">
+              <span className="font-light flex items-center text-center md:text-start">
+                <span className="mr-2">—</span> Masterplan
+              </span>
+              <span className="font-light">
+                <span className="mr-2">—</span> Floor plans
+              </span>
             </div>
           </div>
         </div>
@@ -170,7 +168,7 @@ const DescriptiveBrochure = ({ desRef }: any) => {
       {/* Form Section */}
       <div className="flex flex-col items-start justify-between">
         <div className="w-full md:w-1/2 ml-auto text-white p-6 md:p-10 rounded-lg">
-          <form className="space-y-4 border border-white p-6 w-80 mx-auto bg-transparent">
+          <form className="space-y-4 border border-white p-6 w-80 mx-auto bg-[#4B504A] !z-[99] relative md:bg-transparent">
             <h3 className="text-center text-white font-semibold text-lg mb-4">
               FILL IN THE FORM
             </h3>
