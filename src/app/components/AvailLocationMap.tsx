@@ -205,7 +205,7 @@ import { isValidPhoneNumber } from "react-phone-number-input";
 import CustomModal from "./CustomModal";
 import { motion } from "framer-motion";
 
-const AvailLocationMap = ({ availRef }: any) => {
+const AvailLocationMap = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -295,8 +295,8 @@ const AvailLocationMap = ({ availRef }: any) => {
       setLoading(false);
       // Logic for downloading the PDF brochure
       const link = document.createElement("a");
-      link.href = "/brochure/map-brochure.pdf"; 
-      link.download = "brochure.pdf"; 
+      link.href = "/brochure/map-brochure.pdf";
+      link.download = "brochure.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -311,10 +311,7 @@ const AvailLocationMap = ({ availRef }: any) => {
   };
 
   return (
-    <div
-      ref={availRef}
-      className="flex flex-col items-center lg:gap-10 my-10 pt-6 p-4 max-w-screen-xl mx-auto shadow-lg mt-20"
-    >
+    <div className="flex flex-col items-center lg:gap-10 my-10 pt-6 p-4 max-w-screen-xl mx-auto shadow-lg mt-20">
       <div className="flex flex-col lg:flex-row items-center justify-center mb-6 w-full gap-8">
         {/* Left Spacer */}
         <div className="lg:mr-12 w-full lg:w-[10%]"></div>
@@ -366,7 +363,8 @@ const AvailLocationMap = ({ availRef }: any) => {
           <div className="flex justify-center w-full">
             <button
               onClick={openModal}
-              className="bg-[#ea1214] text-white w-full lg:w-auto px-6 py-3 buttonHoverAnimation">
+              className="bg-[#ea1214] text-white w-full lg:w-auto px-6 py-3 buttonHoverAnimation"
+            >
               Download Location Map
             </button>
           </div>

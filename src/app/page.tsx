@@ -19,7 +19,6 @@ export default function Home() {
   const imgRef = useRef();
   const floorRef = useRef();
   const payRef = useRef();
-  const availRef = useRef();
   const exprtRef = useRef();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -53,7 +52,7 @@ export default function Home() {
       title: "Floor plan",
     },
     {
-      path: availRef,
+      path: exprtRef,
       title: "contact",
     },
   ];
@@ -130,7 +129,7 @@ export default function Home() {
 
         <FloorPlan floorRef={floorRef} />
         <PaymentPlans payRef={payRef} />
-        <AvailLocationMap availRef={availRef} />
+        <AvailLocationMap />
         <OurExpertForm exprtRef={exprtRef} />
       </div>
     </>
