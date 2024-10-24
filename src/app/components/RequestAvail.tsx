@@ -9,8 +9,8 @@ import { isValidPhoneNumber } from "react-phone-number-input";
 const RequestAvail = ({ reqRef }: any) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState(""); // State to handle validation error
-  const [countryCode, setCountryCode] = useState("AE"); // Default country code
+  const [error, setError] = useState("");
+  const [countryCode, setCountryCode] = useState("AE");
   const [value, setValue] = useState("");
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -22,16 +22,13 @@ const RequestAvail = ({ reqRef }: any) => {
 
   const fetchCountryCode = async () => {
     try {
-      const data = await fetch("/api/location", {
-        method: "GET",
-      });
+      const data = await fetch("/api/location", { method: "GET" });
 
       if (!data.ok) {
         throw new Error(`HTTP error! status: ${data.status}`);
       }
 
       const { response } = await data.json();
-
       setCountryCode(response?.country_code2);
       setUserLocation({
         user_location: response?.country_capital || "",
@@ -50,9 +47,7 @@ const RequestAvail = ({ reqRef }: any) => {
     try {
       const response = await fetch("/api/downloadburecher", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           user_number: value,
           user_location: userLocation.user_location,
@@ -67,7 +62,7 @@ const RequestAvail = ({ reqRef }: any) => {
       const data = await response.json();
       return data;
     } catch (error) {
-      console.error("Failed to fetch country code:", error);
+      console.error("Failed to post user data:", error);
     }
   };
 
@@ -110,19 +105,18 @@ const RequestAvail = ({ reqRef }: any) => {
   return (
     <div
       ref={reqRef}
-      className="p-8 bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-20"
+      className="p-4 bg-white shadow-lg my-16 md:my-8 max-w-screen-xl mx-auto mt-20"
     >
       <div className="flex flex-col lg:flex-row items-center justify-center mb-6 w-full">
-        <div className="lg:mr-12 w-full lg:w-[10%]"></div>
-        <h2 className="text-1xl md:text-xl lg:text-3xl font-bold text-black mb-6 text-center lg:text-left">
+        <div className="lg:mr-6 w-full lg:w-[10%]"></div>
+        <h2 className="text-lg md:text-xl lg:text-3xl font-bold text-black mb-4 text-center lg:text-left">
           Avena The Valley Villas by EMAAR Dubai
         </h2>
         <div className="bg-black h-[6px] lg:w-[15%] w-full lg:ml-6"></div>
       </div>
-      <div className="flex items-center justify-center gap-10">
-        {/* Left Section: Image with applied variant using Framer Motion */}
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-10">
         <motion.div
-          className="w-[47%] h-full border-4 border-gray-300 rounded-lg shadow-xl"
+          className="w-full lg:w-[47%] h-full border-4 border-gray-300 rounded-lg shadow-xl"
           variants={imageVariants}
           initial="hidden"
           animate="visible"
@@ -130,25 +124,17 @@ const RequestAvail = ({ reqRef }: any) => {
         >
           {images.Outdoor("")}
         </motion.div>
-        {/* Right Section: Text */}
-        <div className="w-[45%]">
+        <div className="w-full lg:w-[45%] mt-4 lg:mt-0">
           <p className="text-sm md:text-md lg:text-lg text-black mb-6 lg:text-left">
             A quaint new town where life finds its inspiration amidst the vast
             shimmering sands and lush green open spaces. Welcome to The Valley
             by Emaar Properties — the perfect place for you to empower your
             dreams and become the innovators and visionaries that will lead the
-            future of the world. The Valley by Emaar is an oasis of luxury
-            nestled in the heart of the UAE, offering serene landscapes,
-            world-class amenities, and unparalleled sophistication. Experience
-            the epitome of modern living amidst the charm of the desert, where
-            innovation meets tradition in every corner. Discover a harmonious
-            blend of urban convenience and natural beauty, where every day
-            presents new opportunities for exploration and growth. Come, embark
-            on a journey of endless possibilities at The Valley by Emaar.
+            future of the world...
           </p>
 
           <button
-            className="bg-red-600 text-sm md:text-lg text-white w-[50%] px-6 py-3 lg:w-auto buttonAnimation"
+            className="bg-red-600 text-sm md:text-lg text-white w-full lg:w-auto px-6 py-3"
             onClick={openModal}
           >
             Request Available Units & Prices
@@ -156,39 +142,27 @@ const RequestAvail = ({ reqRef }: any) => {
         </div>
       </div>
       <div className="max-w-screen-xl mx-auto p-4 my-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20">
-          {/* Card 1 */}
-          <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-[150px] w-[200px]">
-            <span className="mb-4">
-              {images.Tree("w-16 fill-[#6ba4c6] h-12")}
-            </span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-auto w-full">
+            <span className="mb-4">{images.Tree("w-16 fill-[#6ba4c6] h-12")}</span>
             <h3 className="text-xl font-bold text-[#6ba4c6]">Green</h3>
             <p className="text-md text-gray-600">Community</p>
           </div>
 
-          {/* Card 2 */}
-          <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-[150px] w-[200px]">
-            <span className="mb-4">
-              {images.CCTV("w-16 fill-[#6ba4c6] h-12")}
-            </span>
+          <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-auto w-full">
+            <span className="mb-4">{images.CCTV("w-16 fill-[#6ba4c6] h-12")}</span>
             <h3 className="text-xl font-bold text-[#6ba4c6]">24/7</h3>
             <p className="text-md text-gray-600">CCTV</p>
           </div>
 
-          {/* Card 3 */}
-          <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-[150px] w-[200px]">
-            <span className="mb-4">
-              {images.OutDoor("w-16 fill-[#6ba4c6] h-12")}
-            </span>
+          <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-auto w-full">
+            <span className="mb-4">{images.OutDoor("w-16 fill-[#6ba4c6] h-12")}</span>
             <h3 className="text-xl font-bold text-[#6ba4c6]">Outdoor</h3>
             <p className="text-md text-gray-600">Pool</p>
           </div>
 
-          {/* Card 4 */}
-          <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-[150px] w-[200px]">
-            <span className="mb-4">
-              {images.Teddy("w-16 fill-[#6ba4c6] h-12")}
-            </span>
+          <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-auto w-full">
+            <span className="mb-4">{images.Teddy("w-16 fill-[#6ba4c6] h-12")}</span>
             <h3 className="text-xl font-bold text-[#6ba4c6]">Kids</h3>
             <p className="text-md text-gray-600">Play Area</p>
           </div>

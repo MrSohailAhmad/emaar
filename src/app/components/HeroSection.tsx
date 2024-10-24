@@ -154,19 +154,19 @@ const HeroSection = ({ heroRef }: any) => {
       ref={heroRef}
       className="mx-auto w-full flex h-auto lg:h-[70vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 my-16"
     >
-     
-         <motion.div
-      ref={ref}
-      className="w-[90%] lg:w-[50%] h-full"
-      animate={controls}
-      initial={{ y: 50, opacity: 0 }}
-    >
-      <Image
-        className="w-full h-full"
-        src={images.HEROIMG}
-        alt="hero sec image"
-      />
-    </motion.div>
+
+      <motion.div
+        ref={ref}
+        className="w-[90%] lg:w-[50%] h-full"
+        animate={controls}
+        initial={{ y: 50, opacity: 0 }}
+      >
+        <Image
+          className="w-full h-full"
+          src={images.HEROIMG}
+          alt="hero sec image"
+        />
+      </motion.div>
       <div className="w-[90%] md:w-[80%] lg:w-[50%] h-[80vh] lg:h-full flex items-start gap-3 flex-col">
         <div className="flex flex-col gap-3">
           <span className="w-full text-4xl font-bold">
@@ -207,7 +207,7 @@ const HeroSection = ({ heroRef }: any) => {
             </div>
           </div>
         </div>
-        <div className="w-full mt-20 align-bottom md:mt-auto flex items-center justify-center">
+        {/* <div className="w-full mt-20 align-bottom md:mt-auto flex items-center justify-center">
           <div className="w-[80%] flex items-center justify-center gap-2 flex-col bg-black/90 rounded-lg relative pb-5">
             <div className="absolute top-[-50px] left-1/1 transform -translate-x-1/2 w-20 h-20 sm:w-24 sm:h-24 animate-up-down">
               <Image
@@ -230,7 +230,6 @@ const HeroSection = ({ heroRef }: any) => {
               onChange={handleInputChange}
             />
             {error && <p className="text-red-500 mt-2">{error}</p>}{" "}
-            {/* Error message */}
             <button
               onClick={handleSubmit}
               className="w-[63%] bg-red-500 text-white px-2 py-3 rounded-md buttonAnimation"
@@ -238,6 +237,44 @@ const HeroSection = ({ heroRef }: any) => {
               {loading ? "Downloading..." : "Download a brochure"}
             </button>
             <span className="text-white">*Time to download - 2 seconds</span>
+          </div>
+        </div> */}
+        <div className="w-full mt-20 md:mt-auto flex items-center justify-center">
+          <div className="w-full sm:w-[90%] md:w-[80%] flex items-center justify-center gap-2 flex-col bg-black/90 rounded-lg relative pb-5 px-4 sm:px-6">
+            <div className="absolute top-[-40px] left-1/1 transform -translate-x-1/2 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 animate-up-down">
+              <Image
+                src={images.HEROIMG}
+                alt="hero section image"
+                className="w-full h-auto"
+              />
+            </div>
+            <span className="mt-12 text-center text-white text-sm sm:text-base md:text-lg">
+              One-click to download Price List and PDF brochure
+            </span>
+
+            <PhoneInput
+              autoFormat
+              defaultCountry={countryCode}
+              countryCodeEditable={false}
+              international
+              placeholder="Enter phone number"
+              className="w-[60%] p-2 !text-black border-none !outline-none rounded-md mt-3"
+              value={value}
+              onChange={handleInputChange}
+            />
+
+            {error && <p className="text-red-500 mt-2 text-center">{error}</p>}
+
+            <button
+              onClick={handleSubmit}
+              className="w-[63%] h-[45px] bg-red-500 text-white px-4 py-3 rounded-md mt-4 transition-transform transform hover:scale-105"
+            >
+              {loading ? "Downloading..." : "Download a brochure"}
+            </button>
+
+            <span className="text-white mt-2 text-xs sm:text-sm text-center">
+              *Time to download - 2 seconds
+            </span>
           </div>
         </div>
       </div>
