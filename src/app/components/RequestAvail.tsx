@@ -1,20 +1,19 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import CustomModal from "./CustomModal";
-import { images } from "../../../public/images";
+import { useEffect, useState } from "react";
 import { isValidPhoneNumber } from "react-phone-number-input";
+import { images } from "../../../public/images";
+import CustomModal from "./CustomModal";
 
 const RequestAvail = ({ reqRef }: any) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState("");
-  const [countryCode, setCountryCode] = useState("AE");
   const [value, setValue] = useState("");
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
-  const [userLocation, setUserLocation] = useState({
+  const [userLocation, setUserLocation] = useState<any>({
     user_location: "",
     user_ip_address: "",
     user_number: "",
@@ -29,7 +28,6 @@ const RequestAvail = ({ reqRef }: any) => {
       }
 
       const { response } = await data.json();
-      setCountryCode(response?.country_code2);
       setUserLocation({
         user_location: response?.country_capital || "",
         user_ip_address: response?.ip || "",
@@ -144,25 +142,33 @@ const RequestAvail = ({ reqRef }: any) => {
       <div className="max-w-screen-xl mx-auto p-4 my-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-auto w-full">
-            <span className="mb-4">{images.Tree("w-16 fill-[#6ba4c6] h-12")}</span>
+            <span className="mb-4">
+              {images.Tree("w-16 fill-[#6ba4c6] h-12")}
+            </span>
             <h3 className="text-xl font-bold text-[#6ba4c6]">Green</h3>
             <p className="text-md text-gray-600">Community</p>
           </div>
 
           <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-auto w-full">
-            <span className="mb-4">{images.CCTV("w-16 fill-[#6ba4c6] h-12")}</span>
+            <span className="mb-4">
+              {images.CCTV("w-16 fill-[#6ba4c6] h-12")}
+            </span>
             <h3 className="text-xl font-bold text-[#6ba4c6]">24/7</h3>
             <p className="text-md text-gray-600">CCTV</p>
           </div>
 
           <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-auto w-full">
-            <span className="mb-4">{images.OutDoor("w-16 fill-[#6ba4c6] h-12")}</span>
+            <span className="mb-4">
+              {images.OutDoor("w-16 fill-[#6ba4c6] h-12")}
+            </span>
             <h3 className="text-xl font-bold text-[#6ba4c6]">Outdoor</h3>
             <p className="text-md text-gray-600">Pool</p>
           </div>
 
           <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-auto w-full">
-            <span className="mb-4">{images.Teddy("w-16 fill-[#6ba4c6] h-12")}</span>
+            <span className="mb-4">
+              {images.Teddy("w-16 fill-[#6ba4c6] h-12")}
+            </span>
             <h3 className="text-xl font-bold text-[#6ba4c6]">Kids</h3>
             <p className="text-md text-gray-600">Play Area</p>
           </div>

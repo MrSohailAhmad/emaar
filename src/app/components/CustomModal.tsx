@@ -118,16 +118,14 @@
 
 // export default CustomModal;
 
-
 // components/CustomModal.js
 "use client";
 
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { images } from "../../../public/images";
+import { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import PhoneInputProps from "react-phone-input-2";
+import { images } from "../../../public/images";
 
 const CustomModal = ({
   isOpen,
@@ -140,19 +138,19 @@ const CustomModal = ({
   loading,
   error,
   setError,
-}) => {
+}: any) => {
   if (!isOpen) return null;
 
   const [countryCode, setCountryCode] = useState("AE"); // Default country code
 
-  const handleInputChange = (newValue) => {
+  const handleInputChange = (newValue: any) => {
     if (newValue === "") {
       setValue(countryCode);
     } else {
       setValue("+" + newValue);
       setError("");
     }
-    setUserLocation((prev) => ({ ...prev, user_number: "+" + value }));
+    setUserLocation((prev: any) => ({ ...prev, user_number: "+" + value }));
   };
 
   const fetchCountryCode = async () => {
@@ -196,7 +194,7 @@ const CustomModal = ({
           <div className="flex flex-col sm:flex-row justify-center items-center pt-8 w-[90%] sm:w-[80%] mx-auto">
             <PhoneInput
               autoFormat
-              defaultCountry={"AE"}
+              defaultCountry={countryCode}
               countryCodeEditable={false}
               international
               placeholder="Enter phone number"
