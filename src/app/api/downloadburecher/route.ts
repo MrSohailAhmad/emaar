@@ -32,7 +32,7 @@
 import { client } from "@/sanity/lib/client";
 import { NextResponse } from "next/server";
 
-export async function POST(request: object) {
+export async function POST(request) {
   const { user_number, user_location, user_ip_address } = await request.json();
   try {
     const response = await client.create({
