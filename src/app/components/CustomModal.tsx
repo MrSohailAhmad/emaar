@@ -139,8 +139,6 @@ const CustomModal = ({
   error,
   setError,
 }) => {
-  if (!isOpen) return null;
-
   const [countryCode, setCountryCode] = useState(false); // Default country code
 
   const handleInputChange = (newValue) => {
@@ -171,7 +169,7 @@ const CustomModal = ({
   useEffect(() => {
     fetchCountryCode();
   });
-
+  if (!isOpen) return null;
   return (
     <div className="fixed inset-0 w-full bg-gray-800 bg-opacity-70 flex justify-center items-center z-50">
       <div className="bg-[#414141] w-full max-w-lg mx-4 sm:mx-auto p-6 sm:p-8 relative rounded-lg text-center">
