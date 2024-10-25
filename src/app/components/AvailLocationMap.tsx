@@ -199,11 +199,11 @@
 
 // export default AvailLocationMap;
 //===//
-import React, { useState, useEffect } from "react";
-import { images } from "../../../public/images";
-import { isValidPhoneNumber } from "react-phone-number-input";
-import CustomModal from "./CustomModal";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { isValidPhoneNumber } from "react-phone-number-input";
+import { images } from "../../../public/images";
+import CustomModal from "./CustomModal";
 
 const AvailLocationMap = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -211,10 +211,9 @@ const AvailLocationMap = () => {
   const closeModal = () => setIsModalOpen(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState(""); // State to handle validation error
-  const [countryCode, setCountryCode] = useState("AE"); // Default country code
   const [value, setValue] = useState("");
 
-  const [userLocation, setUserLocation] = useState({
+  const [userLocation, setUserLocation] = useState<any>({
     user_location: "",
     user_ip_address: "",
     user_number: "",
@@ -232,7 +231,7 @@ const AvailLocationMap = () => {
 
       const { response } = await data.json();
 
-      setCountryCode(response?.country_code2);
+      // setCountryCode(response?.country_code2);
       setUserLocation({
         user_location: response?.country_capital || "",
         user_ip_address: response?.ip || "",

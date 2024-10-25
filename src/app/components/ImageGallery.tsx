@@ -1,6 +1,5 @@
 "use client"; // Ensure this is included for client-side rendering
 
-import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles

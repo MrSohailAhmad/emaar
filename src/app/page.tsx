@@ -1,16 +1,14 @@
 "use client";
 import { useRef, useState } from "react";
+import { images } from "../../public/images";
 import AvailLocationMap from "./components/AvailLocationMap";
 import DescriptiveBrochure from "./components/DescriptiveBrochure";
 import FloorPlan from "./components/FloorPlan";
 import HeroSection from "./components/HeroSection";
 import ImageGallery from "./components/ImageGallery";
-import Navbar from "./components/Navbar";
 import OurExpertForm from "./components/OurExpertForm";
 import PaymentPlans from "./components/PaymentPlan";
 import RequestAvail from "./components/RequestAvail";
-import { images } from "../../public/images";
-import Link from "next/link";
 
 export default function Home() {
   const heroRef = useRef();
@@ -70,7 +68,6 @@ export default function Home() {
   };
   return (
     <>
-      {/* <Navbar scrollToSection={scrollToSection} /> */}
       <nav className="bg-white border-gray-200 top-0 z-[999] drop-shadow-lg sticky">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a

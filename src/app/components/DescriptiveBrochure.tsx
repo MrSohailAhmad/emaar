@@ -128,6 +128,8 @@ const DescriptiveBrochure = ({ desRef }: any) => {
     }
   };
 
+  console.log("DescriptiveBrochure errors ", error);
+
   return (
     <div
       ref={desRef}

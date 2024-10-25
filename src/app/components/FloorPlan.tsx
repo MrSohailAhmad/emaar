@@ -1,10 +1,9 @@
 // components/FloorPlan.js
 
-import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import CustomModal from "./CustomModal";
-import { images } from "../../../public/images";
+import { useEffect, useState } from "react";
 import { isValidPhoneNumber } from "react-phone-number-input";
+import CustomModal from "./CustomModal";
 
 const FloorPlan = ({ floorRef }: any) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,9 +15,6 @@ const FloorPlan = ({ floorRef }: any) => {
   const [error, setError] = useState(""); // State to handle validation error
   const [error2, setError2] = useState(""); // State to handle validation error
 
-  const [countryCode, setCountryCode] = useState("AE"); // Default country code
-  const [countryCode2, setCountryCode2] = useState("AE"); // Default country code
-
   const [value, setValue] = useState("");
   const [value2, setValue2] = useState("");
 
@@ -28,7 +24,7 @@ const FloorPlan = ({ floorRef }: any) => {
   const closeModal = () => setIsModalOpen(false);
   const closeModal2 = () => setIsModalOpen2(false);
 
-  const [userLocation, setUserLocation] = useState({
+  const [userLocation, setUserLocation] = useState<any>({
     user_location: "",
     user_ip_address: "",
     user_number: "",
@@ -46,7 +42,7 @@ const FloorPlan = ({ floorRef }: any) => {
 
       const { response } = await data.json();
 
-      setCountryCode(response?.country_code2);
+      // setCountryCode(response?.country_code2);
       setUserLocation({
         user_location: response?.country_capital || "",
         user_ip_address: response?.ip || "",
@@ -196,7 +192,7 @@ const FloorPlan = ({ floorRef }: any) => {
             <div className="floor-plan-image">
               <Image
                 src="/groud-level.jpg"
-                // alt="Ground Level"
+                alt="Ground"
                 width={500}
                 height={300}
                 className="image"
