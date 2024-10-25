@@ -6,14 +6,14 @@ import { isValidPhoneNumber } from "react-phone-number-input";
 import { images } from "../../../public/images";
 import CustomModal from "./CustomModal";
 
-const RequestAvail = ({ reqRef }: any) => {
+const RequestAvail = ({ reqRef }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState("");
   const [value, setValue] = useState("");
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
-  const [userLocation, setUserLocation] = useState<any>({
+  const [userLocation, setUserLocation] = useState({
     user_location: "",
     user_ip_address: "",
     user_number: "",

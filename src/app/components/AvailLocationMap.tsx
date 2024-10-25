@@ -213,7 +213,7 @@ const AvailLocationMap = () => {
   const [error, setError] = useState(""); // State to handle validation error
   const [value, setValue] = useState("");
 
-  const [userLocation, setUserLocation] = useState<any>({
+  const [userLocation, setUserLocation] = useState({
     user_location: "",
     user_ip_address: "",
     user_number: "",

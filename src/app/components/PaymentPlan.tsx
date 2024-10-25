@@ -32,7 +32,7 @@ const paymentPlansData: PaymentPlan[] = [
   },
 ];
 
-const PaymentPlans = ({ payRef }: any) => {
+const PaymentPlans = ({ payRef }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -73,7 +73,7 @@ const PaymentPlans = ({ payRef }: any) => {
           </div>
         ))}
       </div>
-      <button className="text-black border border-black text-black px-4 py-2 md:px-4 md:py-3 text-center w-full sm:w-auto shadow hover:shadow-lg transition-shadow buttonHoverAnimation">
+      <button className="text-black border border-black  px-4 py-2 md:px-4 md:py-3 text-center w-full sm:w-auto shadow hover:shadow-lg transition-shadow buttonHoverAnimation">
         Reserve Yours Today
       </button>
     </div>

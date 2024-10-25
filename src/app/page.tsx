@@ -55,7 +55,7 @@ export default function Home() {
     },
   ];
 
-  const scrollToSection = (ref: any) => {
+  const scrollToSection = (ref) => {
     const offset = 95; // Adjust this value based on the height of your sticky navbar
     if (ref.current) {
       const elementPosition =

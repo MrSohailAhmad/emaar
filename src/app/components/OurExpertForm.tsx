@@ -6,7 +6,7 @@ import "@/app/globals.css";
 import { useEffect } from "react";
 import { isValidPhoneNumber } from "react-phone-number-input";
 
-const OurExpertForm = ({ exprtRef }: any) => {
+const OurExpertForm = ({ exprtRef }) => {
   const [value, setValue] = useState("");
   const [countryCode, setCountryCode] = useState("AE"); // Default country code
 
@@ -20,7 +20,7 @@ const OurExpertForm = ({ exprtRef }: any) => {
   });
 
   useEffect(() => {
-    let timer: any;
+    let timer;
     if (formSubmitted || error) {
       timer = setTimeout(() => {
         setFormSubmitted(false);
@@ -55,7 +55,7 @@ const OurExpertForm = ({ exprtRef }: any) => {
     fetchCountryCode();
   }, []); // Empty dependency array ensures it runs only once on mount
 
-  const handleInputChange = async (newValue: any) => {
+  const handleInputChange = async (newValue) => {
     // If the input is empty, keep the country code in the input
     if (newValue === "") {
       setValue(countryCode); // Reset value to country code
@@ -93,7 +93,7 @@ const OurExpertForm = ({ exprtRef }: any) => {
     }
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
@@ -115,6 +115,7 @@ const OurExpertForm = ({ exprtRef }: any) => {
         setFormSubmitted(true);
       }
     } catch (error) {
+      console.log(error);
       setError("Failed to submit form. Please try again later.");
     } finally {
       setLoading(false);
@@ -144,7 +145,7 @@ const OurExpertForm = ({ exprtRef }: any) => {
           <div className="flex flex-col w-full">
             <input
               style={{ borderBottom: "2px solid #fff" }}
-              onChange={(e: any) =>
+              onChange={(e) =>
                 setState((prev) => ({ ...prev, name: e.target.value }))
               }
               type="text"
@@ -157,7 +158,7 @@ const OurExpertForm = ({ exprtRef }: any) => {
           <div className="flex flex-col">
             <input
               style={{ borderBottom: "2px solid #fff" }}
-              onChange={(e: any) =>
+              onChange={(e) =>
                 setState((prev) => ({ ...prev, email: e.target.value }))
               }
               type="email"

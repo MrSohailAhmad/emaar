@@ -121,8 +121,8 @@
 // components/CustomModal.js
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { images } from "../../../public/images";
@@ -138,19 +138,19 @@ const CustomModal = ({
   loading,
   error,
   setError,
-}: any) => {
+}) => {
   if (!isOpen) return null;
 
-  const [countryCode, setCountryCode] = useState("AE"); // Default country code
+  const [countryCode, setCountryCode] = useState(false); // Default country code
 
-  const handleInputChange = (newValue: any) => {
+  const handleInputChange = (newValue) => {
     if (newValue === "") {
       setValue(countryCode);
     } else {
       setValue("+" + newValue);
       setError("");
     }
-    setUserLocation((prev: any) => ({ ...prev, user_number: "+" + value }));
+    setUserLocation((prev) => ({ ...prev, user_number: "+" + value }));
   };
 
   const fetchCountryCode = async () => {
@@ -170,7 +170,7 @@ const CustomModal = ({
 
   useEffect(() => {
     fetchCountryCode();
-  }, []);
+  });
 
   return (
     <div className="fixed inset-0 w-full bg-gray-800 bg-opacity-70 flex justify-center items-center z-50">

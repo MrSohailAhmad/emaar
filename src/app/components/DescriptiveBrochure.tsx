@@ -5,7 +5,7 @@ import PhoneInput from "react-phone-input-2";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import { motion } from "framer-motion";
 
-const DescriptiveBrochure = ({ desRef }: any) => {
+const DescriptiveBrochure = ({ desRef }) => {
   const [value, setValue] = useState("");
   const [countryCode, setCountryCode] = useState("AE"); // Default country code
   const [formSubmitted, setFormSubmitted] = useState<boolean>();
@@ -31,7 +31,7 @@ const DescriptiveBrochure = ({ desRef }: any) => {
   };
 
   useEffect(() => {
-    let timer: any;
+    let timer;
     if (formSubmitted || error) {
       timer = setTimeout(() => {
         setFormSubmitted(false);
@@ -67,7 +67,7 @@ const DescriptiveBrochure = ({ desRef }: any) => {
     fetchCountryCode();
   }, []);
 
-  const handleInputChange = async (newValue: any) => {
+  const handleInputChange = async (newValue) => {
     if (newValue === "") {
       setValue(countryCode);
     } else {
@@ -101,7 +101,7 @@ const DescriptiveBrochure = ({ desRef }: any) => {
     }
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
@@ -122,6 +122,7 @@ const DescriptiveBrochure = ({ desRef }: any) => {
         setFormSubmitted(true);
       }
     } catch (error) {
+      console.log(error);
       setError("Failed to submit form. Please try again later.");
     } finally {
       setLoading(false);
@@ -177,7 +178,7 @@ const DescriptiveBrochure = ({ desRef }: any) => {
             <div>
               <input
                 value={state.name}
-                onChange={(e: any) =>
+                onChange={(e) =>
                   setState((prev) => ({ ...prev, name: e.target.value }))
                 }
                 type="text"
@@ -188,7 +189,7 @@ const DescriptiveBrochure = ({ desRef }: any) => {
             <div>
               <input
                 value={state.email}
-                onChange={(e: any) =>
+                onChange={(e) =>
                   setState((prev) => ({ ...prev, email: e.target.value }))
                 }
                 type="email"

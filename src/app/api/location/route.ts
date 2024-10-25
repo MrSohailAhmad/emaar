@@ -23,7 +23,7 @@ export async function GET() {
       message: "Success",
       response: data,
     });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error fetching location data:", error);
     return NextResponse.json(
       { message: "Error fetching location data", error: error.message },

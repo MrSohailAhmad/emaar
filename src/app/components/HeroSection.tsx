@@ -5,11 +5,10 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { images } from "../../../public/images";
 import { isValidPhoneNumber } from "react-phone-number-input";
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-
-const HeroSection = ({ heroRef }: any) => {
+const HeroSection = ({ heroRef }) => {
   const [value, setValue] = useState("");
   const [countryCode, setCountryCode] = useState("AE"); // Default country code
   const [userLocation, setUserLocation] = useState({
@@ -57,7 +56,7 @@ const HeroSection = ({ heroRef }: any) => {
       controls.start({
         y: 0,
         opacity: 1,
-        transition: { duration: 1, ease: 'easeInOut' },
+        transition: { duration: 1, ease: "easeInOut" },
       });
     } else {
       controls.start({ y: 50, opacity: 0 });
@@ -90,7 +89,7 @@ const HeroSection = ({ heroRef }: any) => {
   };
 
   useEffect(() => {
-    let timer: any;
+    let timer;
     if (error) {
       timer = setTimeout(() => {
         setError(false);
@@ -136,7 +135,7 @@ const HeroSection = ({ heroRef }: any) => {
     }
   };
 
-  const handleInputChange = (newValue: any) => {
+  const handleInputChange = (newValue) => {
     // If the input is empty, keep the country code in the input
     // Validate inputs
 
@@ -154,7 +153,6 @@ const HeroSection = ({ heroRef }: any) => {
       ref={heroRef}
       className="mx-auto w-full flex h-auto lg:h-[70vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 my-16"
     >
-
       <motion.div
         ref={ref}
         className="w-[90%] lg:w-[50%] h-full"

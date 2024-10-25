@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { images } from "../../../public/images";
 
-const Navbar = ({ scrollToSection }: any) => {
+const Navbar = ({ scrollToSection }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null); // Track active menu item
 
@@ -55,7 +55,9 @@ const Navbar = ({ scrollToSection }: any) => {
             />
           </svg>
         </button>
-        <div className={`${isOpen ? "block" : "hidden"} w-full md:block md:w-auto`}>
+        <div
+          className={`${isOpen ? "block" : "hidden"} w-full md:block md:w-auto`}
+        >
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
             {menu.map((item, idx) => (
               <li
