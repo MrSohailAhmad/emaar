@@ -304,11 +304,6 @@ const AvailLocationMap = () => {
   };
 
   // Framer Motion variants for the image animation
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } },
-    hover: { scale: 1.1, transition: { duration: 0.3 } },
-  };
 
   return (
     <div className="flex flex-col items-center lg:gap-10 my-10 pt-6 p-4 max-w-screen-xl mx-auto shadow-lg mt-20">
