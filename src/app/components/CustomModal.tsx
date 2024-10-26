@@ -188,7 +188,7 @@ const CustomModal = ({
 
   useEffect(() => {
     fetchCountryCode();
-  }, []);
+  });
   if (!isOpen) return null;
 
   console.log("countryCode", countryCode);

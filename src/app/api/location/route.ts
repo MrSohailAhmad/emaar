@@ -7,7 +7,7 @@ export async function GET(req: Request) {
 
     // Call the IP API to get the country code using the client's IP
     const response = await fetch(
-      `    https://api.ipgeolocation.io/ipgeo?apiKey=155b50fa9458498c9cfcda3fac325990&ip=${ip}`
+      `https://api.ipgeolocation.io/ipgeo?apiKey=155b50fa9458498c9cfcda3fac325990&ip=${ip}`
     );
 
     // Check if the response is OK
