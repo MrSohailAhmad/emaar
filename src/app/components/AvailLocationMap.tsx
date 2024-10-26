@@ -329,13 +329,7 @@ const AvailLocationMap = () => {
       </div>
       <div className="flex flex-col lg:flex-row items-center justify-center gap-10 w-full">
         {/* Left Section: Image */}
-        <div
-          className="w-full lg:w-[47%] relative h-full rounded-lg "
-          // variants={imageVariants}
-          // initial="hidden"
-          // animate="visible"
-          // whileHover="hover"
-        >
+        <div className="w-full lg:w-[47%] relative h-full rounded-lg ">
           <div className="flex gap-10 ">
             {images.Gall1("w-[15rem] h-[22rem]")}
             {images.GalleryImg1("w-[12rem] mt-8 z-[9] h-[12rem]")}
