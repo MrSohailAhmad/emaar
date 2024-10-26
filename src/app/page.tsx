@@ -123,6 +123,7 @@ export default function Home() {
         <RequestAvail reqRef={reqRef} />
         <DescriptiveBrochure desRef={desRef} />
         <ImageGallery imgRef={imgRef} />
+        
 
         <FloorPlan floorRef={floorRef} />
         <PaymentPlans payRef={payRef} />
