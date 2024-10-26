@@ -199,7 +199,6 @@
 
 // export default AvailLocationMap;
 //===//
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import { images } from "../../../public/images";
