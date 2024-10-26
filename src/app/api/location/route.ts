@@ -3,7 +3,10 @@ import { NextResponse } from "next/server";
 export async function GET(req: Request) {
   try {
     // Get the client's IP address
-    const ip = req.headers.get("x-forwarded-for") || req.ip || "8.8.8.8"; // Fallback to a known IP for testing
+    const ip =
+      req.headers.get("x-real-ip") ||
+      req.headers.get("x-forwarded-for") ||
+      "8.8.8.8";
 
     // Call the IP API to get the country code using the client's IP
     const response = await fetch(
