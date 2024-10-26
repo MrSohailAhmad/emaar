@@ -316,7 +316,7 @@ const AvailLocationMap = () => {
       <div className="flex flex-col lg:flex-row items-center justify-center mb-6 w-full gap-8">
         {/* Left Spacer */}
         <div className="lg:mr-12 w-full lg:w-[10%]"></div>
-        <h2 className="text-1xl md:text-xl lg:text-3xl font-bold text-black mb-6 text-center lg:text-left">
+        <h2 className="text-1xl md:text-xl lg:text-3xl font-bold text-black mb-6 md:mb-0 text-center lg:text-left">
           Avena The Valley Villas by EMAAR Dubai
         </h2>
         {/* Black Divider */}
