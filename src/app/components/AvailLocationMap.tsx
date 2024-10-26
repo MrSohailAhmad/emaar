@@ -335,15 +335,23 @@ const AvailLocationMap = () => {
       </div>
       <div className="flex flex-col lg:flex-row items-center justify-center gap-10 w-full">
         {/* Left Section: Image */}
-        <motion.div
-          className="w-full lg:w-[47%] h-auto border-4 border-gray-300 rounded-lg shadow-xl"
-          variants={imageVariants}
-          initial="hidden"
-          animate="visible"
-          whileHover="hover"
+        <div
+          className="w-full lg:w-[47%] relative h-full rounded-lg "
+          // variants={imageVariants}
+          // initial="hidden"
+          // animate="visible"
+          // whileHover="hover"
         >
-          {images.Outdoor("")}
-        </motion.div>
+          <div className="flex gap-10 ">
+            {images.Gall1("w-[15rem] h-[22rem]")}
+            {images.GalleryImg1("w-[12rem] mt-8 z-[9] h-[12rem]")}
+          </div>
+          <div className="flex absolute -bottom-10 left-[10rem]">
+            {images.Outdoor("w-[15rem] mt-10 z-[9] h-[8rem]")}
+            {/* {images.GalleryImg1("w-[15rem] h-[10rem]")} */}
+          </div>
+        </div>
+
         {/* Right Section: Text */}
         <div className="w-full lg:w-[45%] flex flex-col">
           <p className="text-sm md:text-md lg:text-lg text-black mb-6 lg:text-left">

@@ -38,7 +38,7 @@ const Cards = () => {
             {images.Teddy("w-16 fill-[#6ba4c6] h-12")}
           </span>
           <h3 className="text-xl font-bold text-[#6ba4c6]">Kids</h3>
-          <p className="text-md text-gray-600">Play Area</p>
+          <p className="!text-lg !font-bold text-gray-600">skdjalks</p>
         </div>
       </div>
     </div>

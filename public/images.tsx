@@ -17,6 +17,8 @@ import GImg4 from "./img4.jpg";
 import GImg5 from "./img5.jpg";
 import GImg6 from "./img6.jpg";
 
+import Gall1 from "./gall1.jpeg";
+
 //
 import FormImg from "./formimg.png";
 export const images = {
@@ -30,6 +32,16 @@ export const images = {
       width={1000}
       height={100}
       src={Outdoor.src}
+      alt="Outdoor"
+    />
+  ),
+
+  Gall1: (props: string) => (
+    <Image
+      className={props}
+      width={1000}
+      height={100}
+      src={Gall1.src}
       alt="Outdoor"
     />
   ),

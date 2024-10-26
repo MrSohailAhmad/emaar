@@ -104,18 +104,19 @@ const RequestAvail = ({ reqRef }) => {
   return (
     <div
       ref={reqRef}
-      className="p-4 bg-white shadow-lg my-16 md:my-8 max-w-screen-xl mx-auto mt-20"
+      className="p-4 bg-white shadow-lg py-[1rem] md:my-8 max-w-screen-xl mx-auto mt-20"
     >
       <div className="flex flex-col lg:flex-row items-center justify-center mb-6 w-full">
         <div className="lg:mr-6 w-full lg:w-[10%]"></div>
-        <h2 className="text-lg md:text-xl lg:text-3xl font-bold text-black mb-4 text-center lg:text-left">
+        <h2 className="text-lg md:text-xl lg:text-3xl font-bold text-black mb-4 md:mb-0 text-center lg:text-left">
           Avena The Valley Villas by EMAAR Dubai
         </h2>
         <div className="bg-black h-[6px] lg:w-[15%] w-full lg:ml-6"></div>
       </div>
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-10">
+      <div className="flex flex-col lg:flex-row my-24 md:my-10 items-center justify-center gap-4 lg:gap-10">
         <motion.div
-          className="w-full lg:w-[47%] h-full border-4 border-gray-300 rounded-lg shadow-xl"
+          style={{ height: "100%" }}
+          className="w-full lg:w-[50%] my-5 h-full imgshadow border-4 border-gray-300 rounded-lg "
           variants={imageVariants}
           initial="hidden"
           animate="visible"
@@ -123,7 +124,7 @@ const RequestAvail = ({ reqRef }) => {
         >
           {images.Outdoor("")}
         </motion.div>
-        <div className="w-full lg:w-[45%] mt-4 lg:mt-0">
+        <div className="w-full !h-[80%] lg:w-[45%] mt-4 lg:mt-0">
           <p className="text-sm md:text-md lg:text-lg text-black mb-6 lg:text-left">
             A quaint new town where life finds its inspiration amidst the vast
             shimmering sands and lush green open spaces. Welcome to The Valley
@@ -154,7 +155,7 @@ const RequestAvail = ({ reqRef }) => {
               {images.Tree("w-16 fill-[#6ba4c6] h-12")}
             </span>
             <h3 className="text-xl font-bold text-[#6ba4c6]">Green</h3>
-            <p className="text-md text-gray-600">Community</p>
+            <p className="text-lg  text-gray-900">Community</p>
           </div>
 
           <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-auto w-full">
@@ -162,7 +163,7 @@ const RequestAvail = ({ reqRef }) => {
               {images.CCTV("w-16 fill-[#6ba4c6] h-12")}
             </span>
             <h3 className="text-xl font-bold text-[#6ba4c6]">24/7</h3>
-            <p className="text-md text-gray-600">CCTV</p>
+            <p className="text-lg  text-gray-900">CCTV</p>
           </div>
 
           <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-auto w-full">
@@ -170,7 +171,7 @@ const RequestAvail = ({ reqRef }) => {
               {images.OutDoor("w-16 fill-[#6ba4c6] h-12")}
             </span>
             <h3 className="text-xl font-bold text-[#6ba4c6]">Outdoor</h3>
-            <p className="text-md text-gray-600">Pool</p>
+            <p className="text-lg  text-gray-900">Pool</p>
           </div>
 
           <div className="p-4 bg-white flex flex-col items-center shadow-lg hover:shadow-xl h-auto w-full">
@@ -178,7 +179,7 @@ const RequestAvail = ({ reqRef }) => {
               {images.Teddy("w-16 fill-[#6ba4c6] h-12")}
             </span>
             <h3 className="text-xl font-bold text-[#6ba4c6]">Kids</h3>
-            <p className="text-md text-gray-600">Play Area</p>
+            <p className="text-lg  text-gray-900">Play Area</p>
           </div>
         </div>
       </div>
