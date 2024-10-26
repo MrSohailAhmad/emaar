@@ -178,6 +178,7 @@ const CustomModal = ({
       }
 
       const { response } = await data.json();
+      console.log("res", response);
       setCountryCode(response?.country_code2 || "AE");
       setValue(response.calling_code || "+1");
     } catch (error) {
@@ -189,6 +190,8 @@ const CustomModal = ({
     fetchCountryCode();
   });
   if (!isOpen) return null;
+
+  console.log("countryCode", countryCode);
 
   return (
     <div className="fixed inset-0 w-full bg-gray-800 bg-opacity-70 flex justify-center items-center z-50">

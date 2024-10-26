@@ -267,7 +267,7 @@ const HeroSection = ({ heroRef }) => {
               countryCodeEditable={false}
               international
               placeholder="Enter phone number"
-              className="w-[60%] p-2 !text-black border-none !outline-none rounded-md mt-3"
+              className="w-[60%] p-2 !text-black border-none !outline-none !h-[2.8rem] rounded-md mt-3"
               value={value}
               onChange={handleInputChange}
             />
