@@ -129,7 +129,14 @@ const RequestAvail = ({ reqRef }) => {
             shimmering sands and lush green open spaces. Welcome to The Valley
             by Emaar Properties — the perfect place for you to empower your
             dreams and become the innovators and visionaries that will lead the
-            future of the world...
+            future of the world. The Valley by Emaar is an oasis of luxury
+            nestled in the heart of the UAE, offering serene landscapes,
+            world-class amenities, and unparalleled sophistication. Experience
+            the epitome of modern living amidst the charm of the desert, where
+            innovation meets tradition in every corner. Discover a harmonious
+            blend of urban convenience and natural beauty, where every day
+            presents new opportunities for exploration and growth. Come, embark
+            on a journey of endless possibilities at The Valley by Emaar.
           </p>
 
           <button

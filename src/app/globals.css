@@ -19,6 +19,11 @@ section {
     
 }
 
+.modalinput .react-tel-input {
+  height: 2.8rem !important;
+  width: 70% !important;
+}
+
 .react-tel-input .form-control {
   background:white;
   color:#000;

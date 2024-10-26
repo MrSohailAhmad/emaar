@@ -212,14 +212,14 @@ const CustomModal = ({
           />
         </div>
         {countryCode && (
-          <div className="flex flex-col sm:flex-row justify-center items-center pt-8 w-[90%] sm:w-[80%] mx-auto">
+          <div className="flex flex-col sm:flex-row justify-center modalinput items-center pt-8 w-[90%] sm:w-[80%] mx-auto">
             <PhoneInput
               autoFormat
               defaultCountry={countryCode}
               countryCodeEditable={false}
               international
               placeholder="Enter phone number"
-              className="p-3 !text-black border-none w-full outline-none"
+              className="p-3 !text-black border-none w-full !h-full outline-none"
               value={value}
               onChange={handleInputChange}
             />
@@ -229,9 +229,9 @@ const CustomModal = ({
         <h3 className="text-white text-[.9rem] font-light py-4">{title}</h3>
         {error && <p className="text-red-500">{error}</p>}
         {/* Download Button */}
-        <div className="mb-5 w-full sm:w-[75%] mx-auto">
+        <div className=" w-full sm:w-[75%] mx-auto">
           <button
-            className="bg-red-600 text-white py-3 px-4 sm:px-6 rounded-lg w-full sm:w-auto max-w-[16rem] mx-auto block transition-transform duration-300 transform hover:scale-105"
+            className="bg-red-600 !w-full text-white py-3 px-4 sm:px-6 rounded-lg  sm:w-auto max-w-[16rem] mx-auto block transition-transform duration-300 transform hover:scale-105"
             onClick={onSubmit}
             style={{ whiteSpace: "nowrap" }}
           >
