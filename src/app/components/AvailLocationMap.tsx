@@ -204,6 +204,7 @@ import { useEffect, useState } from "react";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import { images } from "../../../public/images";
 import CustomModal from "./CustomModal";
+import { UserLocation } from "./HeroSection";
 
 const AvailLocationMap = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -213,7 +214,7 @@ const AvailLocationMap = () => {
   const [error, setError] = useState(""); // State to handle validation error
   const [value, setValue] = useState("");
 
-  const [userLocation, setUserLocation] = useState<any>({
+  const [userLocation, setUserLocation] = useState<UserLocation>({
     user_location: "",
     user_ip_address: "",
     user_number: "",
@@ -233,6 +234,7 @@ const AvailLocationMap = () => {
 
       // setCountryCode(response?.country_code2);
       setUserLocation({
+        user_number: "",
         user_location: response?.country_capital || "",
         user_ip_address: response?.ip || "",
       });

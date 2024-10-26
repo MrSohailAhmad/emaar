@@ -126,7 +126,23 @@ import { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { images } from "../../../public/images";
-
+import { UserLocation } from "./HeroSection";
+interface CustomModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  title: string;
+  onSubmit: () => void;
+  setUserLocation: (location: {
+    user_location: string;
+    user_ip_address: string;
+    user_number: string;
+  }) => void;
+  value: string;
+  setValue: (value: string) => void;
+  loading: boolean;
+  error: string;
+  setError: (error: string) => void;
+}
 const CustomModal = ({
   isOpen,
   onClose,
@@ -138,19 +154,20 @@ const CustomModal = ({
   loading,
   error,
   setError,
-}: any) => {
-  if (!isOpen) return null;
-
+}: CustomModalProps) => {
   const [countryCode, setCountryCode] = useState("AE"); // Default country code
 
-  const handleInputChange = (newValue: any) => {
+  const handleInputChange = (newValue: string) => {
     if (newValue === "") {
       setValue(countryCode);
     } else {
       setValue("+" + newValue);
       setError("");
     }
-    setUserLocation((prev: any) => ({ ...prev, user_number: "+" + value }));
+    setUserLocation((prev: UserLocation) => ({
+      ...prev,
+      user_number: "+" + value,
+    }));
   };
 
   const fetchCountryCode = async () => {
@@ -170,7 +187,8 @@ const CustomModal = ({
 
   useEffect(() => {
     fetchCountryCode();
-  }, []);
+  });
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 w-full bg-gray-800 bg-opacity-70 flex justify-center items-center z-50">

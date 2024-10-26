@@ -12,7 +12,7 @@ import "swiper/css/pagination";
 import { Keyboard, Mousewheel, Navigation, Pagination } from "swiper/modules";
 import { images } from "../../../public/images";
 
-const ImageGallery = ({ imgRef }: any) => {
+const ImageGallery = ({ imgRef }) => {
   const galleryImages = [
     images.GalleryImg1("!w-full !h-full"),
     images.GalleryImg1("!w-full !h-full"),

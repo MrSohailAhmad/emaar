@@ -32,7 +32,7 @@ const paymentPlansData: PaymentPlan[] = [
   },
 ];
 
-const PaymentPlans = ({ payRef }: any) => {
+const PaymentPlans = ({ payRef }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (

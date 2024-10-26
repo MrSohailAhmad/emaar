@@ -4,8 +4,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import CustomModal from "./CustomModal";
+import { UserLocation } from "./HeroSection";
 
-const FloorPlan = ({ floorRef }: any) => {
+const FloorPlan = ({ floorRef }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpen2, setIsModalOpen2] = useState(false);
 
@@ -24,7 +25,7 @@ const FloorPlan = ({ floorRef }: any) => {
   const closeModal = () => setIsModalOpen(false);
   const closeModal2 = () => setIsModalOpen2(false);
 
-  const [userLocation, setUserLocation] = useState<any>({
+  const [userLocation, setUserLocation] = useState<UserLocation>({
     user_location: "",
     user_ip_address: "",
     user_number: "",
