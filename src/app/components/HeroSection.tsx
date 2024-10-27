@@ -276,7 +276,7 @@ const HeroSection = ({ heroRef }) => {
 
             <button
               onClick={handleSubmit}
-              className="w-[63%] h-[45px] bg-red-500 text-white px-4 py-3 rounded-md mt-4 transition-transform transform hover:scale-105"
+              className="w-[63%] h-[45px] text-[10px] md:text-[14px] lg:text-[16px] bg-red-500 text-white px-4 py-3 rounded-md mt-4 transition-transform transform hover:scale-105"
             >
               {loading ? "Downloading..." : "Download a brochure"}
             </button>
