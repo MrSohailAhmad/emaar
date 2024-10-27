@@ -162,7 +162,7 @@ const HeroSection = ({ heroRef }) => {
   return (
     <div
       ref={heroRef}
-      className="mx-auto w-full flex h-[150vh] md:h-[150vh] lg:h-[80vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 "
+      className="mx-auto w-full flex h-[150vh] md:h-[150vh] lg:h-[70vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 "
     >
       <motion.div
         ref={ref}

@@ -193,7 +193,7 @@ const OurExpertForm = ({ exprtRef }) => {
           {/* Submit Button */}
           <button
             onClick={handleSubmit}
-            className="bg-white text-[#0a2a45] w-full md:w-[60%] p-4 font-bold uppercase hover:bg-gray-300 transition duration-300 mx-auto md:mx-0"
+            className="bg-white text-[#0a2a45] text-[10px] md:text-[14px] lg:text-[16px] w-full md:w-[60%] p-4 font-bold uppercase hover:bg-gray-300 transition duration-300 mx-auto md:mx-0"
           >
             {loading ? "Form Submitting..." : "  Request a call back"}
           </button>

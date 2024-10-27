@@ -172,13 +172,13 @@ const FloorPlan = ({ floorRef }) => {
           <div className="actions flex flex-col">
             <button
               onClick={openModal}
-              className="bg-red-600  text-[10px] md:text-[16px] text-white !max-w-[20rem] px-6 py-3 lg:w-auto buttonAnimation my-2"
+              className="bg-red-600 text-[10px] md:text-[14px] lg:text-[16px] text-white !max-w-[20rem] px-6 py-3 lg:w-auto buttonAnimation my-2"
             >
               Get All Floor Plans.pdf
             </button>
             <button
               onClick={openModal2}
-              className="bg-red-600 text-[10px] md:text-[16px] text-white !max-w-[20rem] px-6 py-3 lg:w-auto buttonAnimation my-4"
+              className="bg-red-600 text-[10px] md:text-[14px] lg:text-[16px] text-white !max-w-[20rem] px-6 py-3 lg:w-auto buttonAnimation my-4"
             >
               Download Brochure.pdf
             </button>
