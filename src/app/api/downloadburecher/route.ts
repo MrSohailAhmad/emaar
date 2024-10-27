@@ -30,9 +30,9 @@
 
 // import { client } from "@/sanity/lib/client";
 import { client } from "@/sanity/lib/client";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request: any) {
+export async function POST(request: NextRequest) {
   const { user_number, user_location, user_ip_address } = await request.json();
   try {
     const response = await client.create({
@@ -47,11 +47,11 @@ export async function POST(request: any) {
       message: "Success",
       response: response,
     });
-  } catch (error: any) {
+  } catch (error) {
     return NextResponse.json(
       {
         message: "Error",
-        error: error.message || "Something went wrong",
+        error: error || "Something went wrong",
       },
       { status: 500 }
     );
