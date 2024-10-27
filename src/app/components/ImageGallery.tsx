@@ -35,10 +35,10 @@ const ImageGallery = ({ imgRef }) => {
   return (
     <div
       ref={imgRef}
-      className="p-8  bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-20"
+      className="p-8  flex-col items-center justify-center bg-white shadow-lg my-10 md:my-16 lg:my-8 max-w-screen-xl mx-auto  lg:mt-20"
     >
       <div>
-        <h1 className="font-extrabold text-4xl text-center lg:text-start -ml-10">
+        <h1 className="font-extrabold text-4xl text-center lg:text-start lg:ml-20">
           GALLERY
         </h1>
       </div>
@@ -52,7 +52,7 @@ const ImageGallery = ({ imgRef }) => {
             clickable: true,
           }}
           modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-          className="mySwiper"
+          className="mySwiper !h-full !justify-center !items-center"
         >
           {galleryImages.map((item, idx) => (
             <SwiperSlide

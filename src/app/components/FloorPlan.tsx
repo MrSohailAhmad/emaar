@@ -160,7 +160,7 @@ const FloorPlan = ({ floorRef }) => {
   return (
     <div
       ref={floorRef}
-      className="p-8 bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-20"
+      className="p-8 bg-white shadow-lg my-10 md:my-16 lg:my-8 max-w-screen-xl mx-auto "
     >
       <h2 className="title !my-10">Floor Plans of Avena The Valley Villas</h2>
       <div className="flex items-start gap-10 flex-col md:flex-row">
@@ -169,16 +169,16 @@ const FloorPlan = ({ floorRef }) => {
             <h3>3-Bedroom Unit</h3>
             <p>Total Area: 2217 sqft</p>
           </div>
-          <div className="actions">
+          <div className="actions flex flex-col">
             <button
               onClick={openModal}
-              className="bg-red-600 text-white !w-[20rem] px-6 py-3 lg:w-auto buttonAnimation my-2"
+              className="bg-red-600  text-[10px] md:text-[16px] text-white !max-w-[20rem] px-6 py-3 lg:w-auto buttonAnimation my-2"
             >
               Get All Floor Plans.pdf
             </button>
             <button
               onClick={openModal2}
-              className="bg-red-600 text-white  !w-[20rem] px-6 py-3 lg:w-auto buttonAnimation my-4"
+              className="bg-red-600 text-[10px] md:text-[16px] text-white !max-w-[20rem] px-6 py-3 lg:w-auto buttonAnimation my-4"
             >
               Download Brochure.pdf
             </button>

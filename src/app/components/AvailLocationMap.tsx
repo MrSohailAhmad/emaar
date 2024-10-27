@@ -306,8 +306,8 @@ const AvailLocationMap = () => {
   // Framer Motion variants for the image animation
 
   return (
-    <div className="flex flex-col items-center lg:gap-10 my-10 pt-6 p-4 max-w-screen-xl mx-auto shadow-lg mt-20">
-      <div className="flex flex-col lg:flex-row items-center justify-center mb-6 w-full gap-8">
+    <div className="flex flex-col items-start lg:items-center justify-center lg:gap-5 h-[140vh] lg:h-[90vh] my-10 pt-6 p-4 max-w-screen-xl mx-auto shadow-lg">
+      <div className="flex flex-col lg:flex-row items-center justify-center  w-full gap-8 mb-10">
         {/* Left Spacer */}
         <div className="lg:mr-12 w-full lg:w-[10%]"></div>
         <h2 className="text-1xl md:text-xl lg:text-3xl font-bold text-black mb-6 md:mb-0 text-center lg:text-left">
@@ -327,21 +327,16 @@ const AvailLocationMap = () => {
           </span>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-10 w-full">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-10 h-[100vh] md:h-auto w-full">
         {/* Left Section: Image */}
-        <div className="w-full lg:w-[47%] relative h-full rounded-lg ">
+        <div className="w-full lg:w-[35%]  h-full rounded-lg ">
           <div className="flex gap-10 ">
-            {images.Gall1("w-[15rem] h-[22rem]")}
-            {images.GalleryImg1("w-[12rem] mt-8 z-[9] h-[12rem]")}
-          </div>
-          <div className="flex absolute -bottom-10 left-[10rem]">
-            {images.Outdoor("w-[15rem] mt-10 z-[9] h-[8rem]")}
-            {/* {images.GalleryImg1("w-[15rem] h-[10rem]")} */}
+            {images.ThreeImgs("w-full h-full")}
           </div>
         </div>
 
         {/* Right Section: Text */}
-        <div className="w-full lg:w-[45%] flex flex-col">
+        <div className="w-full lg:w-[55%] flex flex-col">
           <p className="text-sm md:text-md lg:text-lg text-black mb-6 lg:text-left">
             A quaint new town where life finds its inspiration amidst the vast
             shimmering sands and lush green open spaces. Welcome to The Valley
@@ -360,7 +355,7 @@ const AvailLocationMap = () => {
           <div className="flex justify-center w-full">
             <button
               onClick={openModal}
-              className="bg-[#ea1214] text-white w-full lg:w-auto px-6 py-3 buttonHoverAnimation"
+              className="bg-[#ea1214] text-[10px] md:text-[16px] text-white w-full lg:w-auto px-6 py-3 buttonHoverAnimation"
             >
               Download Location Map
             </button>

@@ -16,6 +16,7 @@ import GImg3 from "./img3.jpg";
 import GImg4 from "./img4.jpg";
 import GImg5 from "./img5.jpg";
 import GImg6 from "./img6.jpg";
+import ThreeImgs from "./threeImg.png";
 
 import Gall1 from "./gall1.jpeg";
 
@@ -60,6 +61,15 @@ export const images = {
       width={800}
       height={800}
       src={GImg1.src}
+      alt="GImg1"
+    />
+  ),
+  ThreeImgs: (props: string) => (
+    <Image
+      className={`${props}`}
+      width={800}
+      height={800}
+      src={ThreeImgs.src}
       alt="GImg1"
     />
   ),

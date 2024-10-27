@@ -38,7 +38,7 @@ const PaymentPlans = ({ payRef }) => {
   return (
     <div
       ref={payRef}
-      className="p-8 bg-white shadow-lg my-32 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-20"
+      className="p-8 bg-white shadow-lg my-20 md:my-16 lg:my-8 max-w-screen-xl mx-auto mt-0"
     >
       <h2 className="text-2xl md:text-3xl font-bold mb-6 text-black text-center md:text-left">
         PAYMENT PLANS

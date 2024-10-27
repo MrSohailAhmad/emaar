@@ -162,11 +162,11 @@ const HeroSection = ({ heroRef }) => {
   return (
     <div
       ref={heroRef}
-      className="mx-auto w-full flex h-auto lg:h-[70vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 my-16"
+      className="mx-auto w-full flex h-[150vh] md:h-[150vh] lg:h-[80vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 "
     >
       <motion.div
         ref={ref}
-        className="w-[90%] lg:w-[50%] h-full"
+        className="w-[90%] lg:w-[50%] h-[70%] md:h-full"
         animate={controls}
         initial={{ y: 50, opacity: 0 }}
       >
@@ -176,9 +176,9 @@ const HeroSection = ({ heroRef }) => {
           alt="hero sec image"
         />
       </motion.div>
-      <div className="w-[90%] md:w-[80%] lg:w-[50%] h-[80vh] lg:h-full flex items-start gap-3 flex-col">
+      <div className="w-[90%] md:w-[80%] lg:w-[50%] h-full lg:h-full flex items-start  gap-3 flex-col">
         <div className="flex flex-col gap-3">
-          <span className="w-full text-4xl font-bold">
+          <span className="w-full md:text-3xl text-2xl font-bold">
             Family-Oriented 3 & 4BR Villas{" "}
           </span>
           <span className="text-2xl font-[500]">
@@ -248,9 +248,9 @@ const HeroSection = ({ heroRef }) => {
             <span className="text-white">*Time to download - 2 seconds</span>
           </div>
         </div> */}
-        <div className="w-full mt-20 md:mt-auto flex items-center justify-center">
+        <div className="w-full mt-auto md:mt-auto flex items-center justify-center">
           <div className="w-full sm:w-[90%] md:w-[80%] flex items-center justify-center gap-2 flex-col bg-black/90 rounded-lg relative pb-5 px-4 sm:px-6">
-            <div className="absolute top-[-40px] left-1/1 transform -translate-x-1/2 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 animate-up-down">
+            <div className="absolute -top-[40px] left-1/1 transform -translate-x-1/2 w-16 h-16 sm:w-32 sm:h-20 md:w-28 md:h-24 animate-up-down">
               <Image
                 src={images.HEROIMG}
                 alt="hero section image"
