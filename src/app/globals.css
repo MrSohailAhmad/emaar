@@ -95,20 +95,30 @@ section {
     margin-right: 8%;
   }
 
+  .swiper-slide {
+    width: 70% !important;
+  }
+
 }
 
 
 @media screen and (max-width: 600px) {
   .swiper-button-prev{
     margin-left: 2%;
+    display: none !important;
   }
 
   .swiper-button-next{
     margin-right: 2%;
+    display: none !important;
   }
 
   .swiper-slide-active img{
     width: 100%;
+  }
+
+  .swiper-slide {
+    width: 100% !important;
   }
 
 }

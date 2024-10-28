@@ -42,7 +42,7 @@ const ImageGallery = ({ imgRef }) => {
           GALLERY
         </h1>
       </div>
-      <div className="my-10">
+      <div className="md:my-10 my-5">
         <Swiper
           slidesPerView={"auto"}
           centeredSlides={true}
@@ -57,7 +57,7 @@ const ImageGallery = ({ imgRef }) => {
           {galleryImages.map((item, idx) => (
             <SwiperSlide
               key={idx}
-              className="!flex items-center justify-center overflow-auto"
+              className="!flex items-center justify-center !w-full !md:w-[60%]  overflow-auto"
             >
               {item}
             </SwiperSlide>

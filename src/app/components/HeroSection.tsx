@@ -162,11 +162,11 @@ const HeroSection = ({ heroRef }) => {
   return (
     <div
       ref={heroRef}
-      className="mx-auto w-full flex h-[150vh] md:h-[150vh] lg:h-[70vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 "
+      className="mx-auto w-full flex h-[130vh] sm:h-[150vh] md:h-[160vh] lg:h-[80vh] gap-10 items-center flex-col lg:flex-row justify-center max-w-screen-xl m-4 "
     >
       <motion.div
         ref={ref}
-        className="w-[90%] lg:w-[50%] h-[70%] md:h-full"
+        className="w-[90%]  h-[40%] sm:h-[70%] md:h-full lg:w-[50%]"
         animate={controls}
         initial={{ y: 50, opacity: 0 }}
       >
@@ -178,16 +178,16 @@ const HeroSection = ({ heroRef }) => {
       </motion.div>
       <div className="w-[90%] md:w-[80%] lg:w-[50%] h-full lg:h-full flex items-start  gap-3 flex-col">
         <div className="flex flex-col gap-3">
-          <span className="w-full md:text-3xl text-2xl font-bold">
+          <span className="w-full md:text-xl text-[1.2rem]  lg:text-3xl font-bold">
             Family-Oriented 3 & 4BR Villas{" "}
           </span>
-          <span className="text-2xl font-[500]">
+          <span className="  md:text-2xl text-[1.2rem] lg:text-2xl font-[500]">
             in AVENA AT THE VALLEY by EMAAR, Dubai
           </span>
         </div>
         <div className="p-1 w-[40%] bg-black" />
         <div>
-          <p className="font-light text-[1rem]">
+          <p className="font-light  md:text-md text-sm text-md lg:text-xl">
             Avena at The Valley is a place where modern living meets the gentle
             touch of nature. This charming community of elegant 4-bedroom villas
             is designed to offer a sustainable lifestyle, nestled in harmony
