@@ -8,9 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// import "./styles.css";
-// import required modules
-import { Keyboard, Mousewheel, Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import { images } from "../../../public/images";
 
 const ImageGallery = ({ imgRef }) => {
