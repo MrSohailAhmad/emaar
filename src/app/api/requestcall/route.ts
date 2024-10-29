@@ -31,8 +31,8 @@ export async function POST(request: Request) {
       try {
         // Compose email options
         await transporter.sendMail({
-          from: process.env.EMAIL_USER,
-          to: email, // Admin email address
+          from: process.env.EMAIL_PROJ, // application email
+          to: process.env.EMAIL_ADMIN, // Admin email address
           subject: "Request a call",
           html: `
              <p> Wellcome to emaar</p>
