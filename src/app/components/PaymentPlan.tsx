@@ -43,7 +43,7 @@ const PaymentPlans = ({ payRef }) => {
       <h2 className="text-2xl md:text-3xl font-bold mb-6 text-black text-center md:text-left">
         PAYMENT PLANS
       </h2>
-      <div className="flex flex-wrap justify-center md:justify-start mb-6 border-b">
+      <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-6 border-b">
         {paymentPlansData.map((plan, index) => (
           <button
             key={index}

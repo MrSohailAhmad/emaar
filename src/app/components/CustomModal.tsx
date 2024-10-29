@@ -219,7 +219,7 @@ const CustomModal = ({
               defaultCountry={countryCode}
               countryCodeEditable={false}
               international
-              placeholder="Enter phone number"
+              placeholder="Phone number"
               className="p-3 !text-black border-none w-full !h-full outline-none"
               value={value}
               onChange={handleInputChange}

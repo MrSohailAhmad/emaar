@@ -175,7 +175,7 @@ const OurExpertForm = ({ exprtRef }) => {
                 countryCodeEditable={false}
                 initialValueFormat="international"
                 international
-                placeholder="Enter phone number"
+                placeholder="Phone number"
                 className="p-3 !text-black !border-none !outline-none"
                 value={value}
                 onChange={handleInputChange}

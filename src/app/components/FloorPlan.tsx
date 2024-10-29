@@ -9,6 +9,7 @@ import { UserLocation } from "./HeroSection";
 const FloorPlan = ({ floorRef }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpen2, setIsModalOpen2] = useState(false);
+  const [btn, setBtn] = useState<number>(1);
 
   const [loading, setLoading] = useState<boolean>(false);
   const [loading2, setLoading2] = useState<boolean>(false);
@@ -185,20 +186,45 @@ const FloorPlan = ({ floorRef }) => {
           </div>
         </div>
         <div className="right-panel ">
-          <div className="bedroom-selector !items-start">
-            <button className="bedroom-button active">3 BR</button>
-            <button className="bedroom-button">4 BR</button>
+          <div className="bedroom-selector flex gap-3 !items-start">
+            <button
+              onClick={() => setBtn(1)}
+              className={`bedroom-button font-bold ${btn === 1 ? "active" : "no-active text-gray-500 "}  hover:bg-black hover:text-white`}
+            >
+              3 BR
+            </button>
+            <button
+              onClick={() => setBtn(2)}
+              className={`bedroom-button font-bold ${btn === 2 ? "active" : "no-active text-gray-500 "}  hover:bg-black hover:text-white`}
+            >
+              4 BR
+            </button>
           </div>
+
           <div className="floor-plan-images">
-            <div className="floor-plan-image">
-              <Image
-                src="/groud-level.jpg"
-                alt="Ground"
-                width={500}
-                height={300}
-                className="image"
-              />
-            </div>
+            {btn === 1 ? (
+              <div className="floor-plan-image">
+                <Image
+                  src="/groud-level.jpg"
+                  alt="Ground"
+                  width={500}
+                  height={300}
+                  className="image"
+                />
+              </div>
+            ) : (
+              btn === 2 && (
+                <div className="floor-plan-image">
+                  <Image
+                    src="/groud-level.jpg"
+                    alt="Ground"
+                    width={500}
+                    height={300}
+                    className="image"
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

@@ -134,7 +134,7 @@ const DescriptiveBrochure = ({ desRef }) => {
   return (
     <div
       ref={desRef}
-      className="relative max-w-screen-xl mx-auto p-10 bg-[#4B504A] rounded-lg overflow-hidden"
+      className="relative max-w-screen-xl mx-auto p-10 bg-[#4B504A] lg:rounded-lg overflow-hidden"
     >
       <motion.div
         className="lg:-bottom-[15rem] -bottom-48 w-full md:w-[80%] h-full -left-[10rem] lg:!-left-[13rem] rotate-6 absolute"
@@ -149,18 +149,18 @@ const DescriptiveBrochure = ({ desRef }) => {
         <div className="flex items-center justify-center w-full gap-4">
           <div className="flex lg:items-start items-center justify-center lg:justify-start gap-10 w-full ">
             <div>
-              <span className="font-light flex items-center text-center md:text-start">
+              <span className="font-light text-[16px]  flex items-center text-center md:text-start">
                 <span className="mr-2">—</span> Lifestyle
               </span>
-              <span className="font-light">
+              <span className="font-light text-[16px] ">
                 <span className="mr-2">—</span> Gallery
               </span>
             </div>
             <div className="flex items-center flex-col">
-              <span className="font-light flex items-center text-center md:text-start">
+              <span className="font-light text-[16px] flex items-center text-center md:text-start">
                 <span className="mr-2">—</span> Masterplan
               </span>
-              <span className="font-light">
+              <span className="font-light text-[16px]">
                 <span className="mr-2">—</span> Floor plans
               </span>
             </div>
@@ -203,7 +203,7 @@ const DescriptiveBrochure = ({ desRef }) => {
                 defaultCountry={countryCode}
                 countryCodeEditable={false}
                 international
-                placeholder="Enter phone number"
+                placeholder="Phone number"
                 className="!p-3 !text-black border-none !w-full !bg-none !outline-none"
                 value={value}
                 onChange={handleInputChange}
@@ -215,10 +215,10 @@ const DescriptiveBrochure = ({ desRef }) => {
                 Form Data Submit Successfully
               </p>
             )}
-            <div className="flex justify-center mt-4">
+            <div className="flex brubtn justify-center mt-4">
               <button
                 onClick={handleSubmit}
-                className="w-64 py-2 border border-white text-white font-semibold bg-transparent  hover:bg-gray-500 transition duration-200"
+                className="w-64 py-2 border border-white h-[45px] text-[10px] md:text-[14px] text-white font-semibold bg-transparent  hover:bg-gray-500 transition duration-200"
               >
                 {loading ? "Submitting..." : "SEND"}
               </button>

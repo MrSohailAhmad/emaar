@@ -113,19 +113,19 @@ const RequestAvail = ({ reqRef }) => {
         </h2>
         <div className="bg-black h-[6px] lg:w-[15%] w-full lg:ml-6"></div>
       </div>
-      <div className="flex flex-col lg:flex-row my-24 md:my-10 items-center justify-center gap-4 lg:gap-10">
+      <div className="flex flex-col lg:flex-row my-24 md:my-20 items-center justify-center gap-5 lg:gap-10">
         <motion.div
-          style={{ height: "100%" }}
-          className="w-full lg:w-[50%] my-5 h-full imgshadow border-4 border-gray-300 rounded-lg "
+          style={{ width: "50%", height: "100%" }}
+          className="sm:w-full lg:w-[45%] mt-5 reqavailImg !h-[100%] imgshadow  rounded-lg "
           variants={imageVariants}
           initial="hidden"
           animate="visible"
           whileHover="hover"
         >
-          {images.Outdoor("")}
+          {images.Outdoor("h-full w-full")}
         </motion.div>
         <div className="w-full !h-[80%] lg:w-[45%] mt-4 lg:mt-0">
-          <p className="text-sm md:text-md lg:text-lg text-black mb-6 lg:text-left">
+          <p className="text-sm md:text-md lg:text-lg reqavailText text-black mb-6 lg:text-left">
             A quaint new town where life finds its inspiration amidst the vast
             shimmering sands and lush green open spaces. Welcome to The Valley
             by Emaar Properties — the perfect place for you to empower your
@@ -134,14 +134,11 @@ const RequestAvail = ({ reqRef }) => {
             nestled in the heart of the UAE, offering serene landscapes,
             world-class amenities, and unparalleled sophistication. Experience
             the epitome of modern living amidst the charm of the desert, where
-            innovation meets tradition in every corner. Discover a harmonious
-            blend of urban convenience and natural beauty, where every day
-            presents new opportunities for exploration and growth. Come, embark
-            on a journey of endless possibilities at The Valley by Emaar.
+            innovation meets tradition in every corner.
           </p>
 
           <button
-            className="bg-red-600 text-sm md:text-lg text-white w-full lg:w-auto px-6 py-3"
+            className="bg-red-600 h-[45px] text-[10px] md:text-[14px] text-sm md:text-lg text-white w-full lg:w-auto px-6 py-3"
             onClick={openModal}
           >
             Request Available Units & Prices

@@ -3,6 +3,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
+import "swiper/swiper-bundle.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -42,7 +43,7 @@ const ImageGallery = ({ imgRef }) => {
           GALLERY
         </h1>
       </div>
-      <div className="md:my-10 my-5">
+      <div className="md:my-10 my-5 ">
         <Swiper
           slidesPerView={"auto"}
           centeredSlides={true}
@@ -51,13 +52,13 @@ const ImageGallery = ({ imgRef }) => {
           pagination={{
             clickable: true,
           }}
-          modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-          className="mySwiper !h-full !justify-center !items-center"
+          modules={[Navigation, Pagination]}
+          className="mySwiper !h-[80%] !justify-center py-14 !items-center"
         >
           {galleryImages.map((item, idx) => (
             <SwiperSlide
               key={idx}
-              className="!flex items-center justify-center !w-full !md:w-[60%]  overflow-auto"
+              className="!flex items-center !h-[90%] justify-center !w-full !md:w-[60%]  overflow-auto"
             >
               {item}
             </SwiperSlide>

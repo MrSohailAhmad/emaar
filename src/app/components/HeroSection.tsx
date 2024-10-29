@@ -187,14 +187,14 @@ const HeroSection = ({ heroRef }) => {
         </div>
         <div className="p-1 w-[40%] bg-black" />
         <div>
-          <p className="font-light  md:text-md text-sm text-md lg:text-xl">
+          <p className="font-light hero-text  md:text-md text-sm text-md lg:text-xl">
             Avena at The Valley is a place where modern living meets the gentle
             touch of nature. This charming community of elegant 4-bedroom villas
             is designed to offer a sustainable lifestyle, nestled in harmony
             with the environment.
           </p>
         </div>
-        <div className="flex w-full gap-5 md:gap-0 flex-wrap justify-center items-center md:justify-between">
+        <div className="flex w-full gap-5 md:gap-0 flex-wrap  items-center justify-between">
           <div className="flex items-center justify-center gap-5">
             <span>{images.Wallet("w-10 fill-[#308a7b] h-10")}</span>
             <div className="flex flex-col">
@@ -257,16 +257,21 @@ const HeroSection = ({ heroRef }) => {
                 className="w-full h-auto"
               />
             </div>
-            <span className="mt-12 text-center text-white text-sm sm:text-base md:text-lg">
+            <span className="mt-12 text-center text-[10px] md:text-[11px] lg:text-[14px] text-white ">
               One-click to download Price List and PDF brochure
             </span>
-
+            {/* <PhoneInput
+              onlyCountries={["fr", "at"]}
+              masks={{ fr: "(...) ..-..-..", at: "(....) ...-...." }}
+            /> */}
             <PhoneInput
               autoFormat
+              onlyCountries={["fr", "at"]} // Specify countries to limit selection
+              masks={{ fr: "(...) ..-..-..", at: "(....) ...-...." }} // Custom masks for FR and AT
               defaultCountry={countryCode}
               countryCodeEditable={false}
               international
-              placeholder="Enter phone number"
+              placeholder="Phone number"
               className="w-[60%] p-2 !text-black border-none !outline-none !h-[2.8rem] rounded-md mt-3"
               value={value}
               onChange={handleInputChange}
@@ -276,7 +281,7 @@ const HeroSection = ({ heroRef }) => {
 
             <button
               onClick={handleSubmit}
-              className="w-[63%] h-[45px] text-[10px] md:text-[14px] lg:text-[16px] bg-red-500 text-white px-4 py-3 rounded-md mt-4 transition-transform transform hover:scale-105"
+              className="w-[63%] h-[45px] text-[10px] hero-btn md:text-[14px] lg:text-[16px] bg-red-500 text-white px-4 py-3 rounded-md mt-4 transition-transform transform hover:scale-105"
             >
               {loading ? "Downloading..." : "Download a brochure"}
             </button>

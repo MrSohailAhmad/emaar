@@ -5,18 +5,21 @@
 
 
 .imgshadow {
-    box-shadow: -29px -63px 0px -19px #56abe4;
-    -webkit-box-shadow: -19px -63px 0px -19px #56abe4;
-    -moz-box-shadow: -29px -63px 0px -19px #56abe4;
+  box-shadow: -29px -63px 0px -19px #56abe4;
+  -webkit-box-shadow: -19px -63px 0px -19px #56abe4;
+  -moz-box-shadow: -29px -63px 0px -19px #56abe4;
 }
+
 section {
-  scroll-margin-top: 95px; /* Adjust to the height of your navbar */
+  scroll-margin-top: 95px;
+  /* Adjust to the height of your navbar */
 }
-.PhoneInputInput{
-    border: none;
-    outline: none;
-    background: none;
-    
+
+.PhoneInputInput {
+  border: none;
+  outline: none;
+  background: none;
+
 }
 
 .modalinput .react-tel-input {
@@ -25,9 +28,9 @@ section {
 }
 
 .react-tel-input .form-control {
-  background:white;
-  color:#000;
-  border:none;
+  background: white;
+  color: #000;
+  border: none;
   outline: none;
   border: none !important;
   width: 100% !important;
@@ -35,15 +38,16 @@ section {
   /* padding: none !important; */
 }
 
-.react-tel-input{
- width: 63% !important;
- padding: 0 !important;
+.react-tel-input {
+  width: 63% !important;
+  padding: 0 !important;
 }
 
-.phoneitem .react-tel-input{
+.phoneitem .react-tel-input {
   background: none !important;
   width: 100% !important;
 }
+
 .phoneitem .react-tel-input .form-control {
   background: transparent !important;
   color: white !important;
@@ -53,25 +57,31 @@ section {
   background: transparent !important;
   border: none !important;
   columns: black !important;
-  
+
 }
-.swiper-wrapper{
-  display: flex !important;section {
-    scroll-margin-top: 80px; /* Adjust to the height of your navbar */
+
+.swiper-wrapper {
+  display: flex !important;
+
+  section {
+    scroll-margin-top: 80px;
+    /* Adjust to the height of your navbar */
   }
+
   align-items: center !important;
   justify-content: start !important;
   height: 100% !important;
   width: 100% !important;
 }
-.swiper-slide{
+
+.swiper-slide {
   width: 60% !important;
   height: 100% !important;
 }
 
 
 .swiper-button-prev,
-.swiper-button-next{
+.swiper-button-next {
   height: 3rem !important;
   width: 3rem !important;
   border-radius: 50%;
@@ -80,40 +90,128 @@ section {
   font-size: 1.2rem !important;
   padding: 10px;
 }
-.swiper-button-next{
+
+.swiper-button-next {
   margin-right: 13%;
 }
-.swiper-button-prev{
+
+.swiper-button-prev {
   margin-left: 13%;
 }
+@media screen and (max-width: 1200px) {
+  .reqavailImg{
+    width: "100%" !important
+  }
+  /* .hero-btn{
+    font-size: ;
+  } */
+
+  .hero-text{
+    font-size: 16px !important;
+  }
+  
+}
+
+
+@media screen and (max-width: 1025px){
+  .reqavailImg{
+    width: 100% !important;
+  }
+}
+
 @media screen and (max-width: 968px) {
-  .swiper-button-prev{
-    margin-left: 8%;
+  .swiper-button-prev {
+    margin-left: -1%;
+
   }
 
-  .swiper-button-next{
-    margin-right: 8%;
+  .swiper-button-next {
+    margin-right: -1%;
+
+
+  }
+  .hero-text{
+    font-size: 20px !important;
   }
 
   .swiper-slide {
-    width: 70% !important;
+    width: 85% !important;
   }
 
 }
 
 
+@media screen and (max-width: 1290px) {
+  /* .reqavailImg{
+width: 140% !important;
+height: 100% !important;
+
+
+  } */
+
+  .reqavailText{
+    font-size: 12px !important;
+    line-height: 1.5rem !important;
+  }
+}
+
+
+
+@media screen and (max-width: 790px) {
+  .swiper-button-prev {
+    margin-left: -1%;
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  .swiper-button-next {
+    margin-right: -1%;
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+  .hero-text{
+    font-size: 16px !important;
+  }
+
+
+  .mySwiper .swiper-slide {
+  height: 90% !important;
+  }
+
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 14px !important;
+    font-weight: 900 !important;
+  }
+
+  .swiper-slide {
+    width: 85% !important;
+  }
+  .reqavailImg{
+    width: "50%" !important
+  }
+  
+}
+
+
+.no-active{
+  border-bottom: 4px solid #696969 !important;
+  color: #696969 ;
+
+}
+
 @media screen and (max-width: 600px) {
-  .swiper-button-prev{
+  .swiper-button-prev {
     margin-left: 2%;
-    display: none !important;
+
   }
 
-  .swiper-button-next{
+  .swiper-button-next {
     margin-right: 2%;
-    display: none !important;
+
   }
 
-  .swiper-slide-active img{
+  .swiper-slide-active img {
     width: 100%;
   }
 
@@ -124,26 +222,40 @@ section {
 }
 
 .swiper-button-prev:after,
-.swiper-button-next:after{
-font-size: 1.2rem !important;
-font-weight: 900 !important;
+.swiper-button-next:after {
+  font-size: 1.2rem ;
+  font-weight: 900 ;
 }
-.swiper-pagination{
-  bottom: -2rem !important;
+/* .brubtn button :after,
+.brubtn button:before{
+
+  width: 1rem;
+  background-color: #fff;
+  height: 1px;
+
+} */
+.swiper-pagination {
+  /* bottom: -1rem !important; */
+  /* padding-top: 1rem !important; */
   z-index: 99999 !important;
   position: absolute !important;
 }
+
+
+
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: #000 !important;
   scale: 1.5 !important;
 }
-.swiper-pagination-bullet{
+
+.swiper-pagination-bullet {
   background: #8b8b8b !important;
   width: 10px !important;
   height: 10px !important;
   /* z-index: ; */
 
 }
+
 .swiper-slide img {
   display: block !important;
   width: 100% !important;
@@ -151,202 +263,265 @@ font-weight: 900 !important;
   object-fit: cover !important;
   position: relative !important;
 }
+
 .swiper-slide-prev:after,
-.swiper-slide-next:after{
+.swiper-slide-next:after {
   content: '';
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  background-color: rgba(206, 206, 206, 0.486) !important; /* Semi-transparent black overlay */
+  background-color: rgba(206, 206, 206, 0.486) !important;
+  /* Semi-transparent black overlay */
   opacity: 1 !important;
-  transition: opacity 0.5s ease !important; 
-  z-index: 1 !important; /* Ensure it's on top of the image */
+  transition: opacity 0.5s ease !important;
+  z-index: 1 !important;
+  /* Ensure it's on top of the image */
 }
 
 .phoneitem .react-tel-input .flag-dropdown.open {
   background: transparent !important;
   border: none !important;
   color: black !important;
-  
+
 }
-.desInput .react-tel-input  .form-control{
-  background:none !important;
+
+.desInput .react-tel-input .form-control {
+  background: none !important;
   color: #fff !important;
   border: none !important;
   outline: none !important;
   width: 100% !important;
 }
-.desInput .react-tel-input{
+
+.desInput .react-tel-input {
   width: 100% !important;
   border: none !important;
   outline: none !important;
   padding: 3px !important;
 }
 
-.desInput .react-tel-input  .flag-dropdown {
-  background-color:transparent !important;
+.desInput .react-tel-input .flag-dropdown {
+  background-color: transparent !important;
   /* color: #fff !important; */
 }
 
-.desInput .react-tel-input  .flag-dropdown.open{
-  background:transparent !important;
-} 
+.desInput .react-tel-input .flag-dropdown.open {
+  background: transparent !important;
+}
 
 .desInput {
   width: 100%;
-  border :1px solid #fff;
+  border: 1px solid #fff;
 }
-.desInput .flag-dropdown{
+
+.desInput .flag-dropdown {
   border: 0 !important;
 }
+
 .desInput .flag-dropdown:hover,
 .desInput .flag-dropdown:focus {
   background-color: transparent !important;
   background: transparent !important;
 
 }
-.brochureImg{
+
+.brochureImg {
   background-image: url("/public/img1.jpg");
-  background-size: cover; /* To cover the entire card */
-  background-position: center; /* To center the image */
+  background-size: cover;
+  /* To cover the entire card */
+  background-position: center;
+  /* To center the image */
 }
 
 /* styles/globals.css or styles/YourComponent.module.css */
 @keyframes moveUpAndDown {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px); /* Adjust the value for how high you want it to move up */
-    }
-  }
-  
-  .animate-up-down {
-    animation: moveUpAndDown 2s ease-in-out infinite; /* Change 2s to control the duration */
+
+  0%,
+  100% {
+    transform: translateY(0);
   }
 
-  @keyframes waveUp {
-    0% {
-      transform: translateY(30%); /* Reduced from 100% to 30% */
-      opacity: 0;
-    }
-    50% {
-      transform: translateY(-5%); /* Reduced from -10% to -5% */
-      opacity: 0.5;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
+  50% {
+    transform: translateY(-10px);
+    /* Adjust the value for how high you want it to move up */
   }
-  
+}
+
+.animate-up-down {
+  animation: moveUpAndDown 2s ease-in-out infinite;
+  /* Change 2s to control the duration */
+}
+
+@keyframes waveUp {
+  0% {
+    transform: translateY(30%);
+    /* Reduced from 100% to 30% */
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(-5%);
+    /* Reduced from -10% to -5% */
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 /* Add this to your CSS file or CSS module */
 @keyframes openPage {
   0% {
-    transform: scale(0) rotate(-30deg); /* Start scaled down and slightly rotated */
-    opacity: 0; /* Start invisible */
-    transform-origin: top left; /* Set the pivot point */
+    transform: scale(0) rotate(-30deg);
+    /* Start scaled down and slightly rotated */
+    opacity: 0;
+    /* Start invisible */
+    transform-origin: top left;
+    /* Set the pivot point */
   }
+
   50% {
-    transform: scale(0.5) rotate(-15deg); /* Slightly larger scale at the midpoint */
-    opacity: 0.5; /* Half visible */
+    transform: scale(0.5) rotate(-15deg);
+    /* Slightly larger scale at the midpoint */
+    opacity: 0.5;
+    /* Half visible */
   }
+
   100% {
-    transform: scale(1) rotate(0); /* End at original size and rotation */
-    opacity: 1; /* Fully visible */
+    transform: scale(1) rotate(0);
+    /* End at original size and rotation */
+    opacity: 1;
+    /* Fully visible */
   }
 }
 
 .openAnimation {
-  animation: openPage 2s ease forwards; /* Adjust duration to 2 seconds for a slower effect */
+  animation: openPage 2s ease forwards;
+  /* Adjust duration to 2 seconds for a slower effect */
 }
 
 /* Add this to your CSS file or CSS module */
 @keyframes buttonAnimate {
   0% {
-    transform: scale(1); /* Start at normal size */
+    transform: scale(1);
+    /* Start at normal size */
   }
+
   50% {
-    transform: scale(1.05); /* Slightly scale up */
+    transform: scale(1.05);
+    /* Slightly scale up */
   }
+
   100% {
-    transform: scale(1); /* Return to normal size */
+    transform: scale(1);
+    /* Return to normal size */
   }
 }
 
 .buttonAnimation {
-  display: inline-block; /* Ensure the button behaves like an inline-block element */
-  transition: transform 0.3s ease; /* Smooth transition */
+  display: inline-block;
+  /* Ensure the button behaves like an inline-block element */
+  transition: transform 0.3s ease;
+  /* Smooth transition */
 }
 
 .buttonAnimation:hover {
-  animation: buttonAnimate 0.5s ease forwards; /* Trigger animation on hover */
+  animation: buttonAnimate 0.5s ease forwards;
+  /* Trigger animation on hover */
 }
+
 /* Add this to your CSS file or CSS module */
 @keyframes buttonAnimate {
   0% {
-    transform: scale(1); /* Start at normal size */
+    transform: scale(1);
+    /* Start at normal size */
   }
+
   50% {
-    transform: scale(1.05); /* Slightly scale up */
+    transform: scale(1.05);
+    /* Slightly scale up */
   }
+
   100% {
-    transform: scale(1); /* Return to normal size */
+    transform: scale(1);
+    /* Return to normal size */
   }
 }
 
 .buttonAnimation {
-  display: inline-block; /* Ensure the button behaves like an inline-block element */
-  transition: transform 0.3s ease; /* Smooth transition */
+  display: inline-block;
+  /* Ensure the button behaves like an inline-block element */
+  transition: transform 0.3s ease;
+  /* Smooth transition */
 }
 
 .buttonAnimation:hover {
-  animation: buttonAnimate 0.5s ease forwards; /* Trigger animation on hover */
+  animation: buttonAnimate 0.5s ease forwards;
+  /* Trigger animation on hover */
 }
 
 /* Add this to your CSS file or CSS module */
 @keyframes buttonHoverAnimate {
   0% {
-    transform: scale(1); /* Start at normal size */
+    transform: scale(1);
+    /* Start at normal size */
   }
+
   50% {
-    transform: scale(1.05); /* Slightly scale up */
+    transform: scale(1.05);
+    /* Slightly scale up */
   }
+
   100% {
-    transform: scale(1); /* Return to normal size */
+    transform: scale(1);
+    /* Return to normal size */
   }
 }
 
 .buttonHoverAnimation {
-  display: inline-block; /* Ensure the button behaves like an inline-block element */
-  transition: transform 0.3s ease; /* Smooth transition */
+  display: inline-block;
+  /* Ensure the button behaves like an inline-block element */
+  transition: transform 0.3s ease;
+  /* Smooth transition */
 }
 
 .buttonHoverAnimation:hover {
-  animation: buttonHoverAnimate 0.5s ease forwards; /* Trigger animation on hover */
+  animation: buttonHoverAnimate 0.5s ease forwards;
+  /* Trigger animation on hover */
 }
+
 /* Add this to your CSS file or CSS module */
 @keyframes buttonHoverAnimate {
   0% {
-    transform: scale(1); /* Start at normal size */
+    transform: scale(1);
+    /* Start at normal size */
   }
+
   50% {
-    transform: scale(1.05); /* Slightly scale up */
+    transform: scale(1.05);
+    /* Slightly scale up */
   }
+
   100% {
-    transform: scale(1); /* Return to normal size */
+    transform: scale(1);
+    /* Return to normal size */
   }
 }
 
 .buttonHoverAnimation {
-  display: inline-block; /* Ensure the button behaves like an inline-block element */
-  transition: transform 0.3s ease; /* Smooth transition */
+  display: inline-block;
+  /* Ensure the button behaves like an inline-block element */
+  transition: transform 0.3s ease;
+  /* Smooth transition */
 }
 
 .buttonHoverAnimation:hover {
-  animation: buttonHoverAnimate 0.5s ease forwards; /* Trigger animation on hover */
+  animation: buttonHoverAnimate 0.5s ease forwards;
+  /* Trigger animation on hover */
 }
 
 
@@ -431,23 +606,28 @@ font-weight: 900 !important;
 }
 
 .floor-plan-images {
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .floor-plan-image {
   margin-bottom: 20px;
   text-align: center;
 }
+
 h3 {
-  color: black; /* Sets the text color to black */
-  font-weight: 700; /* Makes the text bold */
+  color: black;
+  /* Sets the text color to black */
+  font-weight: 700;
+  /* Makes the text bold */
   font-size: 22px;
 }
-p  {
-  font-weight: 400; /* Makes the text bold */
+
+p {
+  font-weight: 400;
+  /* Makes the text bold */
   font-size: 12px;
   padding: 10px;
 }
@@ -456,9 +636,11 @@ p  {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-5px);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -467,4 +649,3 @@ p  {
 /* li:hover {
   animation: wave 0.5s ease infinite;
 } */
-
