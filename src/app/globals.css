@@ -73,7 +73,7 @@ section {
 
 .swiper-slide {
   width: 60% !important;
-  height: 100% !important;
+  height: 90% !important;
 }
 
 .swiper-button-prev,
@@ -106,6 +106,12 @@ section {
     height: 3rem !important;
   }
 
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 16px !important;
+    font-weight: 900 !important;
+  }
+
   .swiper-button-next {
     font-size: 1.2rem !important;
     padding: 10px;
@@ -120,6 +126,11 @@ section {
 @media screen and (max-width: 1025px) {
   .reqavailImg {
     width: 100% !important;
+  }
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 16px !important;
+    font-weight: 900 !important;
   }
 }
 
@@ -147,6 +158,11 @@ height: 100% !important;
 
 
   } */
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 16px !important;
+    font-weight: 900 !important;
+  }
 
   .reqavailText {
     font-size: 12px !important;
@@ -216,14 +232,7 @@ height: 100% !important;
   font-size: 1.2rem;
   font-weight: 900;
 }
-/* .brubtn button :after,
-.brubtn button:before{
 
-  width: 1rem;
-  background-color: #fff;
-  height: 1px;
-
-} */
 .swiper-pagination {
   /* bottom: -1rem !important; */
   /* padding-top: 1rem !important; */
@@ -255,8 +264,8 @@ height: 100% !important;
 .swiper-slide-next:after {
   content: "";
   position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
+  /* top: 0 !important;
+  left: 0 !important; */
   width: 100% !important;
   height: 100% !important;
   background-color: rgba(206, 206, 206, 0.486) !important;
