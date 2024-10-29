@@ -32,7 +32,7 @@ export async function POST(request: Request) {
         // Compose email options
         await transporter.sendMail({
           from: process.env.EMAIL_USER,
-          to: "ahmadsohail1819@gmail.com", // Admin email address
+          to: email, // Admin email address
           subject: "Request a call",
           html: `
              <p> Wellcome to emaar</p>
