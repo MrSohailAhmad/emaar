@@ -51,7 +51,7 @@ const ImageGallery = ({ imgRef }) => {
             clickable: true,
           }}
           modules={[Navigation, Pagination]}
-          className="mySwiper !h-[80%] !justify-center py-14 !items-center"
+          className="mySwiper !h-[80%] !justify-center !py-14 !items-center"
         >
           {galleryImages.map((item, idx) => (
             <SwiperSlide
