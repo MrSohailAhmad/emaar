@@ -1,8 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'flowbite';
-
+@import "flowbite";
 
 .imgshadow {
   box-shadow: -29px -63px 0px -19px #56abe4;
@@ -19,7 +18,6 @@ section {
   border: none;
   outline: none;
   background: none;
-
 }
 
 .modalinput .react-tel-input {
@@ -57,7 +55,6 @@ section {
   background: transparent !important;
   border: none !important;
   columns: black !important;
-
 }
 
 .swiper-wrapper {
@@ -79,7 +76,6 @@ section {
   height: 100% !important;
 }
 
-
 .swiper-button-prev,
 .swiper-button-next {
   height: 3rem !important;
@@ -99,22 +95,29 @@ section {
   margin-left: 13%;
 }
 @media screen and (max-width: 1200px) {
-  .reqavailImg{
-    width: "100%" !important
+  .reqavailImg {
+    width: "100%" !important;
   }
-  /* .hero-btn{
-    font-size: ;
-  } */
+  .swiper-button-prev {
+    font-size: 1.2rem !important;
+    padding: 10px;
+    width: 3rem !important;
+    height: 3rem !important;
+  }
 
-  .hero-text{
+  .swiper-button-next {
+    font-size: 1.2rem !important;
+    padding: 10px;
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+  .hero-text {
     font-size: 16px !important;
   }
-  
 }
 
-
-@media screen and (max-width: 1025px){
-  .reqavailImg{
+@media screen and (max-width: 1025px) {
+  .reqavailImg {
     width: 100% !important;
   }
 }
@@ -122,24 +125,19 @@ section {
 @media screen and (max-width: 968px) {
   .swiper-button-prev {
     margin-left: -1%;
-
   }
 
   .swiper-button-next {
     margin-right: -1%;
-
-
   }
-  .hero-text{
+  .hero-text {
     font-size: 20px !important;
   }
 
   .swiper-slide {
     width: 85% !important;
   }
-
 }
-
 
 @media screen and (max-width: 1290px) {
   /* .reqavailImg{
@@ -149,13 +147,11 @@ height: 100% !important;
 
   } */
 
-  .reqavailText{
+  .reqavailText {
     font-size: 12px !important;
     line-height: 1.5rem !important;
   }
 }
-
-
 
 @media screen and (max-width: 790px) {
   .swiper-button-prev {
@@ -169,13 +165,12 @@ height: 100% !important;
     width: 2rem !important;
     height: 2rem !important;
   }
-  .hero-text{
+  .hero-text {
     font-size: 16px !important;
   }
 
-
   .mySwiper .swiper-slide {
-  height: 90% !important;
+    height: 90% !important;
   }
 
   .swiper-button-prev:after,
@@ -187,28 +182,23 @@ height: 100% !important;
   .swiper-slide {
     width: 85% !important;
   }
-  .reqavailImg{
-    width: "50%" !important
+  .reqavailImg {
+    width: "50%" !important;
   }
-  
 }
 
-
-.no-active{
+.no-active {
   border-bottom: 4px solid #696969 !important;
-  color: #696969 ;
-
+  color: #696969;
 }
 
 @media screen and (max-width: 600px) {
   .swiper-button-prev {
     margin-left: 2%;
-
   }
 
   .swiper-button-next {
     margin-right: 2%;
-
   }
 
   .swiper-slide-active img {
@@ -218,13 +208,12 @@ height: 100% !important;
   .swiper-slide {
     width: 100% !important;
   }
-
 }
 
 .swiper-button-prev:after,
 .swiper-button-next:after {
-  font-size: 1.2rem ;
-  font-weight: 900 ;
+  font-size: 1.2rem;
+  font-weight: 900;
 }
 /* .brubtn button :after,
 .brubtn button:before{
@@ -241,8 +230,6 @@ height: 100% !important;
   position: absolute !important;
 }
 
-
-
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: #000 !important;
   scale: 1.5 !important;
@@ -253,7 +240,6 @@ height: 100% !important;
   width: 10px !important;
   height: 10px !important;
   /* z-index: ; */
-
 }
 
 .swiper-slide img {
@@ -266,7 +252,7 @@ height: 100% !important;
 
 .swiper-slide-prev:after,
 .swiper-slide-next:after {
-  content: '';
+  content: "";
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
@@ -284,7 +270,6 @@ height: 100% !important;
   background: transparent !important;
   border: none !important;
   color: black !important;
-
 }
 
 .desInput .react-tel-input .form-control {
@@ -324,7 +309,6 @@ height: 100% !important;
 .desInput .flag-dropdown:focus {
   background-color: transparent !important;
   background: transparent !important;
-
 }
 
 .brochureImg {
@@ -337,7 +321,6 @@ height: 100% !important;
 
 /* styles/globals.css or styles/YourComponent.module.css */
 @keyframes moveUpAndDown {
-
   0%,
   100% {
     transform: translateY(0);
@@ -524,7 +507,6 @@ height: 100% !important;
   /* Trigger animation on hover */
 }
 
-
 /* styles/globals.css or a dedicated CSS file for this component */
 
 .floor-plan-container {
@@ -563,7 +545,6 @@ height: 100% !important;
   justify-content: center;
 }
 
-
 .bedroom-button {
   padding: 10px 20px;
   margin: 5px 0;
@@ -572,7 +553,7 @@ height: 100% !important;
   cursor: pointer;
   display: block;
   width: 60px;
-  height: 70px
+  height: 70px;
 }
 
 .bedroom-button.active {
