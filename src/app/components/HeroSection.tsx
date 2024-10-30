@@ -260,14 +260,8 @@ const HeroSection = ({ heroRef }) => {
             <span className="mt-12 text-center text-[10px] md:text-[11px] lg:text-[14px] text-white ">
               One-click to download Price List and PDF brochure
             </span>
-            {/* <PhoneInput
-              onlyCountries={["fr", "at"]}
-              masks={{ fr: "(...) ..-..-..", at: "(....) ...-...." }}
-            /> */}
+
             <PhoneInput
-              autoFormat
-              onlyCountries={["fr", "at"]} // Specify countries to limit selection
-              masks={{ fr: "(...) ..-..-..", at: "(....) ...-...." }} // Custom masks for FR and AT
               defaultCountry={countryCode}
               countryCodeEditable={false}
               international
