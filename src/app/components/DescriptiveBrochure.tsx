@@ -37,11 +37,6 @@ const DescriptiveBrochure = ({ desRef }) => {
         setFormSubmitted(false);
         setError(false);
         setValue("");
-        setState({
-          email: "",
-          name: "",
-          phone_number: "",
-        });
       }, 5000);
     }
     return () => clearTimeout(timer); // Cleanup the timer on unmount

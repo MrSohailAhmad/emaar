@@ -355,9 +355,10 @@ const AvailLocationMap = () => {
           <div className="flex justify-center w-full">
             <button
               onClick={openModal}
-              className="bg-[#ea1214] text-[10px] md:text-[16px] text-white w-full lg:w-auto px-6 py-3 buttonHoverAnimation"
+              className="bg-[#ea1214] !flex items-center justify-center gap-5 text-[10px] md:text-[16px] text-white w-full lg:w-auto px-6 py-3 buttonHoverAnimation"
             >
-              Download Location Map
+              <span>{images.PDFAcrobet("h-8 fill-white w-8")}</span>
+              <span> Download Location Map.pdf</span>
             </button>
           </div>
         </div>

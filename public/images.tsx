@@ -17,11 +17,10 @@ import GImg4 from "./img4.jpg";
 import GImg5 from "./img5.jpg";
 import GImg6 from "./img6.jpg";
 import ThreeImgs from "./threeImg.png";
-
 import Gall1 from "./gall1.jpeg";
-
-//
 import FormImg from "./formimg.png";
+import PDFAcrobet from "./adobe-acrobat.svg";
+
 export const images = {
   HEROIMG,
   Home: <Image width={100} height={100} src={Home.src} alt="Home" />,
@@ -123,4 +122,5 @@ export const images = {
   CCTV: (props: string) => <CCTV className={`${props}`} />,
   Tree: (props: string) => <Tree className={`${props}`} />,
   Wallet: (props: string) => <Wallet className={`${props}`} />,
+  PDFAcrobet: (props: string) => <PDFAcrobet className={`${props}`} />,
 };

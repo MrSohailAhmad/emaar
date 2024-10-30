@@ -250,7 +250,7 @@ const HeroSection = ({ heroRef }) => {
         </div> */}
         <div className="w-full mt-auto md:mt-auto flex items-center justify-center">
           <div className="w-full sm:w-[90%] md:w-[80%] flex items-center justify-center gap-2 flex-col bg-black/90 rounded-lg relative pb-5 px-4 sm:px-6">
-            <div className="absolute -top-[40px] left-1/1 transform -translate-x-1/2 w-16 h-16 sm:w-32 sm:h-20 md:w-28 md:h-24 animate-up-down">
+            <div className="absolute -top-[90px] !w-[11rem] left-1/1 transform -translate-x-1/2  h-16  sm:h-20 !md:w-24 md:h-24 animate-up-down">
               <Image
                 src={images.HEROIMG}
                 alt="hero section image"
