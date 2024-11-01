@@ -121,7 +121,7 @@ section {
     height: 3rem !important;
   }
   .hero-text {
-    font-size: 16px !important;
+    font-size: 15px !important;
   }
 }
 
@@ -226,6 +226,28 @@ section {
 
   .swiper-slide {
     width: 100% !important;
+  }
+
+  .hero-sec {
+    height: 130vh;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .hero-sec {
+    height: 140vh;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .hero-sec {
+    height: 145vh;
+  }
+}
+
+@media screen and (max-width: 265px) {
+  .hero-sec {
+    height: 175vh;
   }
 }
 
