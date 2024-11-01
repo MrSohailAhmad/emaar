@@ -239,9 +239,9 @@ section {
   }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 310px) {
   .hero-sec {
-    height: 155vh;
+    height: 160vh;
   }
 }
 
