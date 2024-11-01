@@ -241,13 +241,13 @@ section {
 
 @media screen and (max-width: 300px) {
   .hero-sec {
-    height: 145vh;
+    height: 155vh;
   }
 }
 
 @media screen and (max-width: 265px) {
   .hero-sec {
-    height: 175vh;
+    height: 180vh;
   }
 }
 
