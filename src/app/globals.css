@@ -229,25 +229,29 @@ section {
   }
 
   .hero-sec {
-    height: 130vh!important;
+    margin-top: 2rem;
+    height: 130vh !important;
   }
 }
 
 @media screen and (max-width: 430px) {
   .hero-sec {
     height: 140vh !important;
+    margin-top: 2rem;
   }
 }
 
 @media screen and (max-width: 310px) {
   .hero-sec {
     height: 160vh !important;
+    margin-top: 2rem;
   }
 }
 
 @media screen and (max-width: 265px) {
   .hero-sec {
     height: 180vh !important;
+    margin-top: 1rem;
   }
 }
 
