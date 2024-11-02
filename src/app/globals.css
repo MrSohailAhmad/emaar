@@ -229,29 +229,40 @@ section {
   }
 
   .hero-sec {
-    margin-top: auto !important;
     height: 130vh !important;
+  }
+  .form-sec {
+    margin-top: auto !important;
   }
 }
 
 @media screen and (max-width: 430px) {
   .hero-sec {
-    margin-top: auto !important;
     height: 140vh !important;
+  }
+
+  .form-sec {
+    margin-top: auto !important;
   }
 }
 
 @media screen and (max-width: 310px) {
   .hero-sec {
-    margin-top: auto !important;
     height: 160vh !important;
+  }
+
+  .form-sec {
+    margin-top: auto !important;
   }
 }
 
 @media screen and (max-width: 265px) {
   .hero-sec {
-    margin-top: auto !important;
     height: 180vh !important;
+  }
+
+  .form-sec {
+    margin-top: auto !important;
   }
 }
 
